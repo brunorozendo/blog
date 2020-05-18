@@ -16,7 +16,7 @@ copyright = "Code released under the Apache 2.0 license."
   email = "bruno@brunorozendo.com"
   Ganalytics = "UA-86914466-1"
   # This will load all the CSS defined in the list
-  # customCSS = ["<absolute path to CSS>", "/static/css/test.css", "<or just load it off the internet>"]
+  customCSS = ["/css/custom.css"]
 
 [[params.social]]
     title = "github"
