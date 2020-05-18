@@ -3,6 +3,7 @@ title = "Start Bootstrap Clean Blog"
 canonifyurls = true
 paginate = 10
 theme = "startbootstrap-clean-blog"
+themesDir = "../../"
 languageCode = "en-us"
 copyright = "Code released under the Apache 2.0 license."
 
