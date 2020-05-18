@@ -1,38 +1,33 @@
-baseurl = "http://humboldtux.github.io/sbcb-demo"
-title = "Start Bootstrap Clean Blog"
+baseurl = "https://brunorozendo.com"
+title = "Bruno Rozendo"
 canonifyurls = true
 paginate = 10
 theme = "startbootstrap-clean-blog"
-languageCode = "en-us"
+languageCode = "pt-BR"
 copyright = "Code released under the Apache 2.0 license."
 
 [author]
-    name = "Benoît Benedetti"
+    name = "Bruno Rozendo"
 
 [params]
   DateForm = "Mon, Jan 2, 2006"
-  Description = "Your site description"
-  Author = "Benoît Benedetti"
-  email = "benoit.benedetti@gmail.com"
-  Ganalytics = "XX-00000000-0"
+  Description = "java, linux, e muitas outras coisas no meio do cominho."
+  Author = "Bruno Rozendo"
+  email = "bruno@brunorozendo.com"
+  Ganalytics = "UA-86914466-1"
   # This will load all the CSS defined in the list
   # customCSS = ["<absolute path to CSS>", "/static/css/test.css", "<or just load it off the internet>"]
 
 [[params.social]]
-    title = "twitter"
-    url = "https://twitter.com/humboldtux"
-[[params.social]]
     title = "github"
-    url = "https://github.com/humboldtux"
-[[params.social]]
-    title = "facebook"
-    url = "https://www.facebook.com/FACEBOOKHANDLE"
+    url = "https://github.com/brunorozendo"
+
 
 [[menu.main]]
   name = "home"
   url = "/"
   weight = -200
 [[menu.main]]
-  name = "Archives"
+  name = "Posts"
   url = "/posts/"
   weight = -180

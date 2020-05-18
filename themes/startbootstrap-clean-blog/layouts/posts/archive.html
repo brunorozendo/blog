@@ -1,6 +1,8 @@
                <div class="post-preview">
-                  <p class="post-meta"><a href="{{ .Permalink }}">{{ .Title }}</a> on {{ dateFormat (.Site.Params.DateForm | default "Mon, Jan 2, 2006") .Date }}
-                    <br />
+                   <h2><a href="{{ .Permalink }}"><span class="post-title">{{ .Title }}</span></a></h2>
+                   <h4><a href="{{ .Permalink }}"><span class="post-subtitle">{{ .Description }}</span></a></h4>
+                  <p class="post-meta">
+                    on {{ dateFormat (.Site.Params.DateForm | default "Mon, Jan 2, 2006") .Date }}<br />
                     {{ partial "categories.html" .}}
                     {{ partial "tags.html" .}}
                   </p>
