@@ -38,4 +38,9 @@
 .imagecredit a{
     color: #939393;
     cursor: pointer;
+    font-size: 0.5em;
+}
+
+.intro-header{
+    box-shadow: 0 0 10px 0 #666666;
 }
