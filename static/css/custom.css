@@ -31,3 +31,11 @@
 .terminal > pre > p {
     margin-bottom: 0;
 }
+
+.imagecredit{
+    font-family: sans-serif;
+}
+.imagecredit a{
+    color: #939393;
+    cursor: pointer;
+}
