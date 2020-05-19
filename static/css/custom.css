@@ -2,6 +2,7 @@
     background-color: #444;
     color: #fff;
     border: 1px solid #585858;
+    margin-bottom: 30px;
 }
 
 .terminal .header {
@@ -31,6 +32,13 @@
 .terminal > pre > p {
     margin-bottom: 0;
 }
+
+.terminal .highlight pre,
+.terminal .highlight code {
+    background-color: initial !important;
+    border: none;
+}
+
 
 .imagecredit{
     font-family: sans-serif;
