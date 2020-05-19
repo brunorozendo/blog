@@ -1,6 +1,6 @@
 ---
 title: "archlinux wifi"
-description: "Copnfiguração inicial par  ter wifi no arch linux."
+description: "Configuração inicial par  ter wifi no arch linux."
 author:
   name: "Bruno Rozendo"
 date: 2015-04-15
@@ -10,6 +10,8 @@ tags:
 - gnu/linux
 - networkmanager
 comments: true
+imageCredit: "<a href='https://www.freepik.com/free-psd/flat-lay-pi-sign-mathematics_7089785.htm#page=1&query=pi&position=29'>imagem from freepik.com</a>"
+image: "/images/posts/archlinux-wifi.svg"
 ---
 
 
