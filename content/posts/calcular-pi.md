@@ -1,50 +1,57 @@
-+++
-Tags = ["matemática","algoritmos","pi"]
-date = "2016-11-12T00:00:00Z"
-title = "Calcular π (pi)"
-mathml = true
-imageLocal = "images/posts/calcular-pi/banner-pi.jpg"
-Comments = true
-+++
+---
+title: "Calcular π (pi)"
+description: "algoritmo em java para calcular pi"
+author:
+  name: "Bruno Rozendo"
+date: 2016-11-12
+tags:
+- matemática
+- algoritmos
+- pi
+comments: true
+imageCredit: "<a href='http://www.freepik.com'>Designed by Freepik</a>"
+image: "/images/posts/calcular-pi.jpg" 
+math: true
+---
 
 
 Seja a fórmula matemática para calcular Pi (<span class="MJXc-TeX-math-I">&Pi;&#x0007C;&pi;</span>)
 
-<div class="math">
+{{< math >}}
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-<mi>&pi;</mi>
- <mo>=</mo>
- <mn>4</mn>
-<mfenced separators="">
-<mn>1</mn>
-<mo>&minus;</mo>
-<mfrac>
-   <mn>1</mn>
-   <mn>3</mn>
-</mfrac>
-<mo>&plus;</mo>
-<mfrac>
-   <mn>1</mn>
-   <mn>5</mn>
-</mfrac>
-<mo>&minus;</mo>
-<mfrac>
-   <mn>1</mn>
-   <mn>7</mn>
-</mfrac>
-<mo>&plus;</mo>
-<mfrac>
-   <mn>1</mn>
-   <mn>9</mn>
-</mfrac>
-<mi>&ctdot;</mi>
-</mfenced>
+  <mi>&pi;</mi>
+   <mo>=</mo>
+   <mn>4</mn>
+  <mfenced separators="">
+  <mn>1</mn>
+  <mo>&minus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>3</mn>
+  </mfrac>
+  <mo>&plus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>5</mn>
+  </mfrac>
+  <mo>&minus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>7</mn>
+  </mfrac>
+  <mo>&plus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>9</mn>
+  </mfrac>
+  <mi>&ctdot;</mi>
+  </mfenced>
 </math>
-</div>
+{{< /math >}}
 
 Fazendo algumas operações algebricas para que a fórmula fique mais fácil de trabalha no algoritmo:
 
-<div class="math">
+{{< math >}}
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 <mi>&pi;</mi>
  <mo>=</mo>
@@ -74,15 +81,11 @@ Fazendo algumas operações algebricas para que a fórmula fique mais fácil de 
 </mfrac>
 <mi>&ctdot;</mi>
 </math>
-</div>
+{{< /math >}}
 
 o algoritmo:
 
-<ul class="nav nav-tabs algoritmo-nav" >
-  <li class="active"><a href="#java">java</a></li>
-</ul>
 
-<div id="java" class="blockcode" style="display: block;" >
 {{< highlight java >}}
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -115,4 +118,4 @@ public class Pi{
   }
 }
 {{< /highlight >}}
-</div>
+
