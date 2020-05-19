@@ -23,21 +23,21 @@ Vamos tomar como ponto de partida o momento em que se instala  o Arch Linux  e q
 
 Caso esse não seja o seu caso digite no terminal :
 
-{{< terminal >}}
-root@archlinux ~# ping -c4 google.com
+{{< terminal >}}{{< highlight bash >}}root@archlinux ~# ping -c4 google.com
+{{< /highlight >}}
 {{< /terminal >}}
 
 Caso a sua saida tenha sido algo parecido com:
 
-{{< terminal >}}
---- google.com ping statistics ---
+{{< terminal >}}{{< highlight bash >}}--- google.com ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 4618ms
+{{< /highlight >}}
 {{< /terminal >}}
 
 Tudo Ok. Se sua maquina estiver na wifi
 
-{{< terminal >}}
-sudo wifi-menu 
+{{< terminal >}}{{< highlight bash >}}sudo wifi-menu 
+{{< /highlight >}}
 {{< /terminal >}}
 
 Vamos ao que interessa:
@@ -45,12 +45,12 @@ Vamos ao que interessa:
 
 A partir desse momento você deve ter uma conexão. 
 
-{{< terminal >}}
-sudo pacman -S networkmanager network-manager-applet
+{{< terminal >}}{{< highlight bash >}}sudo pacman -S networkmanager network-manager-applet
 sudo pacman -S wireless_tools dbus
 sudo pacman -S gnome-keyring
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable wpa_supplicant.service
+{{< /highlight >}}
 {{< /terminal >}}
 
 
