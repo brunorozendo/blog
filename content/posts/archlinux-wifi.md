@@ -10,7 +10,7 @@ tags:
 - gnu/linux
 - networkmanager
 comments: true
-imageCredit: "<a href='https://www.freepik.com/free-psd/flat-lay-pi-sign-mathematics_7089785.htm#page=1&query=pi&position=29'>imagem from freepik.com</a>"
+imageCredit: "<a href='http://www.freepik.com'>Designed by Freepik</a>"
 image: "/images/posts/archlinux-wifi.svg"
 ---
 
