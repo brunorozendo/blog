@@ -1,0 +1,89 @@
+<!doctype html><html lang=pt-br><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="algoritmo em java para calcular pi"><meta name=author content="Bruno Rozendo"><meta name=keywords content><title>Calcular π (pi) -- Bruno Rozendo</title><link href=https://brunorozendo.com/css/bootstrap.min.css rel=stylesheet><link href=https://brunorozendo.com/css/clean-blog.min.css rel=stylesheet><link rel=stylesheet type=text/css href=https://brunorozendo.com/css/custom.css><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel=stylesheet></head><body><nav class="navbar navbar-default navbar-custom navbar-fixed-top"><div class=container-fluid><div class="navbar-header page-scroll"><button type=button class=navbar-toggle data-toggle=collapse data-target=#bs-example-navbar-collapse-1>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+<a class=navbar-brand href=https://brunorozendo.com>Bruno Rozendo</a></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav navbar-right"><li><a href=https://brunorozendo.com/>home</a></li><li><a href=https://brunorozendo.com/about.html>About</a></li><li><a href=https://brunorozendo.com/posts/>Posts</a></li><li><a href=https://brunorozendo.com/contact.html>Contact</a></li></ul></div></div></nav><header class=intro-header style=background-image:url(https://brunorozendo.com//images/posts/calcular-pi.jpg)><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Calcular π (pi)</h1><h2 class=subheading>algoritmo em java para calcular pi</h2><span class=meta>Posted by <a href=#>Bruno Rozendo</a> on Sat, Nov 12, 2016<br>In<br>Tags <a href=https://brunorozendo.com/tags/matem%C3%A1tica>matemática</a>, <a href=https://brunorozendo.com/tags/algoritmos>algoritmos</a>, <a href=https://brunorozendo.com/tags/pi>pi</a></span></div></div></div></div><div class="container-fluid imagecredit"><div class=row><div class=".col-sm text-right"><a href=http://www.freepik.com>Designed by Freepik</a></div></div></div></header><article><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Seja a fórmula matemática para calcular Pi (Π|π)</p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>&pi;</mi>
+   <mo>=</mo>
+   <mn>4</mn>
+  <mfenced separators="">
+  <mn>1</mn>
+  <mo>&minus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>3</mn>
+  </mfrac>
+  <mo>&plus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>5</mn>
+  </mfrac>
+  <mo>&minus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>7</mn>
+  </mfrac>
+  <mo>&plus;</mo>
+  <mfrac>
+     <mn>1</mn>
+     <mn>9</mn>
+  </mfrac>
+  <mi>&ctdot;</mi>
+  </mfenced>
+</math><p>Fazendo algumas operações algebricas para que a fórmula fique mais fácil de trabalha no algoritmo:</p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mi>&pi;</mi>
+ <mo>=</mo>
+<mfrac>
+   <mn>4</mn>
+   <mn>1</mn>
+</mfrac>
+<mo>&minus;</mo>
+<mfrac>
+   <mn>4</mn>
+   <mn>3</mn>
+</mfrac>
+<mo>&plus;</mo>
+<mfrac>
+   <mn>4</mn>
+   <mn>5</mn>
+</mfrac>
+<mo>&minus;</mo>
+<mfrac>
+   <mn>4</mn>
+   <mn>7</mn>
+</mfrac>
+<mo>&plus;</mo>
+<mfrac>
+   <mn>4</mn>
+   <mn>9</mn>
+</mfrac>
+<mi>&ctdot;</mi>
+</math><p>o algoritmo:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#f92672>import</span> java.math.BigDecimal<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.math.MathContext<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.math.RoundingMode<span style=color:#f92672>;</span>
+
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Pi</span><span style=color:#f92672>{</span>
+  <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Pi</span><span style=color:#f92672>(){</span>
+    <span style=color:#66d9ef>int</span> precisao <span style=color:#f92672>=</span> 15000<span style=color:#f92672>;</span>
+    MathContext mx                   <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> MathContext<span style=color:#f92672>(</span>precisao<span style=color:#f92672>,</span> RoundingMode<span style=color:#f92672>.</span><span style=color:#a6e22e>HALF_EVEN</span><span style=color:#f92672>);</span>
+
+    BigDecimal quatro                <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal<span style=color:#f92672>(</span> 4<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+    BigDecimal pi                    <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal<span style=color:#f92672>(</span> 0<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+    BigDecimal sinal                 <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal<span style=color:#f92672>(</span> 1<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+    BigDecimal incrementoDenominador <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal<span style=color:#f92672>(</span> 2<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+    BigDecimal denominador           <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal<span style=color:#f92672>(</span> 1<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+
+    <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0 <span style=color:#f92672>;</span> i <span style=color:#f92672>&lt;</span> precisao <span style=color:#f92672>;</span> i<span style=color:#f92672>++)</span> <span style=color:#f92672>{</span>
+      BigDecimal tmp  <span style=color:#f92672>=</span> quatro<span style=color:#f92672>.</span><span style=color:#a6e22e>divide</span><span style=color:#f92672>(</span>denominador<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+      tmp <span style=color:#f92672>=</span> tmp<span style=color:#f92672>.</span><span style=color:#a6e22e>multiply</span><span style=color:#f92672>(</span>sinal<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+      pi <span style=color:#f92672>=</span> pi<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>tmp<span style=color:#f92672>,</span> mx<span style=color:#f92672>);</span>
+
+      sinal <span style=color:#f92672>=</span> sinal<span style=color:#f92672>.</span><span style=color:#a6e22e>negate</span><span style=color:#f92672>();</span>
+      denominador <span style=color:#f92672>=</span> denominador<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>incrementoDenominador<span style=color:#f92672>);</span>
+    <span style=color:#f92672>}</span>
+    System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>print</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\u03c0: &#34;</span><span style=color:#f92672>);</span>
+    System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>pi<span style=color:#f92672>);</span>
+  <span style=color:#f92672>}</span>  
+  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+    <span style=color:#66d9ef>new</span> Pi<span style=color:#f92672>();</span>
+  <span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span></code></pre></div></div></div></div></article><hr><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a href=mailto:bruno@brunorozendo.com><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/brunorozendo><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="copyright text-muted">Code released under the Apache 2.0 license.</p></div></div></div></footer><script src=https://brunorozendo.com/js/jquery.min.js></script><script src=https://brunorozendo.com/js/bootstrap.min.js></script><script src=https://brunorozendo.com/js/clean-blog.js></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js></script></body></html>
