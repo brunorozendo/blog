@@ -6,6 +6,9 @@ theme = "startbootstrap-clean-blog"
 languageCode = "pt-BR"
 copyright = "Code released under the Apache 2.0 license."
 
+uglyurls = true
+publishDir = "public"
+
 [author]
     name = "Bruno Rozendo"
 
