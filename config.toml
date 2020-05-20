@@ -32,5 +32,5 @@ publishDir = "public"
   weight = -200
 [[menu.main]]
   name = "Posts"
-  url = "/posts/"
+  url = "/posts.html"
   weight = -180
