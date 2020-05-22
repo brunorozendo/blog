@@ -14,7 +14,7 @@ publishDir = "public"
 
 [params]
   DateForm = "Mon, Jan 2, 2006"
-  Description = "java, linux, e muitas outras coisas no meio do cominho."
+  Description = "coisas que esbarrei no meio do caminho."
   Author = "Bruno Rozendo"
   email = "bruno@brunorozendo.com"
   Ganalytics = "UA-86914466-1"
