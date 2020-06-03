@@ -37,4 +37,4 @@ googleAnalytics = "UA-86914466-1"
   weight = -180
 
 [permalinks]
-  posts = "/post/:filename.html"
+  posts = "/post/:filename"
