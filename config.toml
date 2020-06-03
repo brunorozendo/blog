@@ -9,6 +9,9 @@ copyright = "Code released under the Apache 2.0 license."
 uglyurls = true
 publishDir = "public"
 
+googleAnalytics = "UA-86914466-1"
+disqusShortname = "brunoozendo"
+
 [author]
     name = "Bruno Rozendo"
 
