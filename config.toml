@@ -9,9 +9,6 @@ copyright = "Code released under the Apache 2.0 license."
 uglyurls = true
 publishDir = "public"
 
-googleAnalytics = "UA-86914466-1"
-disqusShortname = "brunoozendo"
-
 [author]
     name = "Bruno Rozendo"
 
@@ -20,9 +17,10 @@ disqusShortname = "brunoozendo"
   Description = "coisas que esbarrei no meio do caminho."
   Author = "Bruno Rozendo"
   email = "bruno@brunorozendo.com"
-  Ganalytics = "UA-86914466-1"
+  googleAnalytics = "UA-86914466-1"
   # This will load all the CSS defined in the list
   customCSS = ["/css/custom.css"]
+  disqusShortname = "brunoozendo"
 
 [[params.social]]
     title = "github"
