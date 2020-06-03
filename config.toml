@@ -35,3 +35,6 @@ publishDir = "public"
   name = "Posts"
   url = "/posts.html"
   weight = -180
+
+[permalinks]
+  posts = "/post/:filename.html"
