@@ -3,7 +3,7 @@ title: "Como Instalar o Android SDK no Gnu/Linux"
 description: "como instalar android tools"
 author:
   name: "Bruno Rozendo"
-date: 2017-07-24
+date: 2020-07-18
 draft: false
 tags:
 - "android"
@@ -16,11 +16,17 @@ image: "/images/posts/android-sdk.svg"
 ---
 
 
+{{< table "table table-striped" >}}
+| rev.  | data |
+|---------|--------|
+| 1 revisão      | 24/07/2017    |
+| 2 revisão      | 18/07/2020    |
+{{</ table >}}
 
 
 ### 0. Prequisitos
 
- 1. Ter o java 8 instalado
+ 1. Ter o java 11 instalado
 
 
  2. Se estiver no __Ubuntu 64__
@@ -35,7 +41,7 @@ image: "/images/posts/android-sdk.svg"
 ### 1. Download do `tools`
 
 
-Vá em [Android Studio > Downloads > sdk-tools-linux-XXXXXXX.zip](https://developer.android.com/studio/index.html#linux-tools)
+Vá em [Android Studio > Downloads > Command line tools only > commandlinetools-linux-XXXXXXXXXXX.zip](https://developer.android.com/studio#downloads)
 
 Espere a página carregar , clique em "I have read and agree with the above terms and conditions" (aceitar) e  faça o download.
 
@@ -51,19 +57,17 @@ Depois de baixado criar a seguinte estrutura de pastas (você pode fazer a sua.)
 
 
  - __android__: aqui ficaram todas as cosisa relacionadas ao android (mas no momentos só tem uma pasta: android-sdk-linux)
- - __android-sdk-linux__: aqui irá ficar todos os recurso <span class="red">__***__</span>
+ - __android-sdk-linux__: aqui irá ficar todos os recurso **
+
+** Você não irá mecher nessa pasta diretamente, todo o conteúdo dela será criado/excluido/alterado pelas ferramentas do próximo passo.
 
 
-<span class="red">__***__</span> Você não irá mecher nessa pasta diretamente, todo o conteúdo dela será criado/excluido/alterado pelas ferramentas do próximo passo.
 
+Dentro da pasta `android-sdk-linux` descompacte o conteudo do zip baixado (`commandlinetools-linux-XXXXXXXXXXX.zip`), o resultado final será:
 
-
-Dentro da pasta `android-sdk-linux` descompacte o conteudo do zip baixado (`sdk-tools-linux-XXXXXXX.zip`), o resultado final será:
-
-{{< terminal >}}{{< highlight bash >}}$ cd /opt/android/android-sdk-linux/tools
+{{< terminal >}}{{< highlight bash >}}$ cd /opt/android/android-sdk-linux/cmdline-tools/tools/bin
 $ ls
-android  bin  emulator  emulator-check  lib  mksdcard  monitor  NOTICE.txt  package.xml  proguard  source.properties  support
-
+bin  lib  NOTICE.txt  source.properties
 {{< /highlight >}}
 {{< /terminal >}}
 
@@ -77,10 +81,11 @@ editar o `/etc/profile` ou o ` ~/.bashrc` e adicionar no final do aquivo
 
 {{< terminal >}}{{< highlight bash >}}export ANDROID_HOME=/opt/android/android-sdk-linux
 export ANDROID_SDK_ROOT=/opt/android/android-sdk-linux
-export PATH=$PATH:$ANDROID_HOME/tools
+export ANDROID_AVD_ROOT=/opt/android/android-sdk-linux/avd
+export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
-
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
 {{< /highlight >}}
 {{< /terminal >}}
 
@@ -89,26 +94,11 @@ __Depois disso reiniciar o computador__.
 
 
 
-No terminal digite `android`
+No terminal digite `sdkmanager`
 
 
-{{< terminal >}}{{< highlight bash >}}:~$ android
-*************************************************************************
-The "android" command is deprecated.
-For manual SDK, AVD, and project management, please use Android Studio.
-For command-line tools, use tools/bin/sdkmanager and tools/bin/avdmanager
-*************************************************************************
-Invalid or unsupported command ""
-
-Supported commands are:
-android list target
-android list avd
-android list device
-android create avd
-android move avd
-android delete avd
-android list sdk
-android update sdk
+{{< terminal >}}{{< highlight bash >}}:~$ sdkmanager
+[=======================================] 100% Computing updates...
 {{< /highlight >}}
 {{< /terminal >}}
 
@@ -131,9 +121,8 @@ No terminal digite
 
 responda com `y` no final e espere(porque aqui vai demorar umpouco, ele vai baixar as dependências):
 
-{{< terminal >}}{{< highlight bash >}}$ sdkmanager "tools"
-Warning: File /home/bruno/.android/repositories.cfg could not be loaded.
-License android-sdk-license:
+{{< terminal >}}{{< highlight bash >}}$ sdkmanager tools
+License android-sdk-license:            ] 10% Computing updates...              
 ---------------------------------------
 Terms and Conditions
 
@@ -145,12 +134,16 @@ This is the Android Software Development Kit License Agreement
 
 ...
 
+14.6 The rights granted in the License Agreement may not be assigned or transferred by either you or Google without the prior written approval of the other party. Neither you nor Google shall be permitted to delegate their responsibilities or obligations under the License Agreement without the prior written approval of the other party.
+
 14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
 
 
-November 20, 2015
+January 16, 2019
 ---------------------------------------
-Accept? (y/N): y  
+Accept? (y/N): 
+
+
 {{< /highlight >}}
 {{< /terminal >}}
 
