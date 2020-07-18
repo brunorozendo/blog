@@ -26,7 +26,7 @@ image: "/images/posts/android-sdk.svg"
 
 ### 0. Prequisitos
 
- 1. Ter o java 11 instalado
+ 1. Ter o java 8 instalado
 
 
  2. Se estiver no __Ubuntu 64__
