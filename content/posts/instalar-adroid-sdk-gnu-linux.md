@@ -21,6 +21,7 @@ image: "/images/posts/android-sdk.svg"
 |---------|--------|
 | 1 revisão      | 24/07/2017    |
 | 2 revisão      | 18/07/2020    |
+| 3 revisão      | 03/02/2021    |
 {{</ table >}}
 
 
@@ -33,7 +34,7 @@ image: "/images/posts/android-sdk.svg"
 	```sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386```
 
  2. Se estiver no __Fedora 64__
-	```sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686```	
+	```sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686```
 
 
 
@@ -46,7 +47,7 @@ Vá em [Android Studio > Downloads > Command line tools only > commandlinetools-
 Espere a página carregar , clique em "I have read and agree with the above terms and conditions" (aceitar) e  faça o download.
 
 
-### 2. Estrutura 
+### 2. Estrutura
 
 Depois de baixado criar a seguinte estrutura de pastas (você pode fazer a sua.)
 
@@ -80,12 +81,11 @@ Agora vamos adicionar as variaváveis de ambiente, se você reparar algumas past
 editar o `/etc/profile` ou o ` ~/.bashrc` e adicionar no final do aquivo
 
 {{< terminal >}}{{< highlight bash >}}export ANDROID_HOME=/opt/android/android-sdk-linux
-export ANDROID_SDK_ROOT=/opt/android/android-sdk-linux
-export ANDROID_AVD_ROOT=/opt/android/android-sdk-linux/avd
-export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+export ANDROID_HOME=/dev/tools/android/windows-android-sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/lasted/bin
+export PATH=$PATH:$ANDROID_HOME/tools
 {{< /highlight >}}
 {{< /terminal >}}
 
@@ -109,10 +109,10 @@ Se a mensagem acima apareceu então fique feliz pois tudo está funcionando.
 
 Agora vamos a ao passo final
 
-### 4. Final: instalando as dependências 
+### 4. Final: instalando as dependências
 
 
-No terminal digite 
+No terminal digite
 
 {{< terminal >}}{{< highlight bash >}}sdkmanager "tools"
 {{< /highlight >}}
@@ -141,7 +141,7 @@ This is the Android Software Development Kit License Agreement
 
 January 16, 2019
 ---------------------------------------
-Accept? (y/N): 
+Accept? (y/N):
 
 
 {{< /highlight >}}
