@@ -29,20 +29,19 @@ image: "/images/posts/android-sdk.svg"
 ### Prequisitos
 
  1. Ter o java 17 instalado
- 2. Intalar dependências<br />
+ 2. Intalar dependências\
     2.1. __Ubuntu 64__:
-        ```sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386```<br />
+    {{< terminal >}}{{< highlight bash >}}$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386{{< /highlight >}}{{< /terminal >}}
     2.2. __Fedora 64__:
-         ```sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686```
+    {{< terminal >}}{{< highlight bash >}}$ sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686{{< /highlight >}}{{< /terminal >}}
 
 
-
-### 1. Download do `tools`
+### 1. Download do `command-tools`
 
 
 Vá em [Android Studio > Downloads > Command line tools only > commandlinetools-linux-XXXXXXXXXXX.zip](https://developer.android.com/studio#command-tools)
 
-Espere a página carregar , clique em "I have read and agree with the above terms and conditions" (aceitar) e  faça o download.
+Espere a página carregar, clique em "I have read and agree with the above terms and conditions" (aceitar) e  faça o download.
 
 
 ### 2. Estrutura
@@ -76,7 +75,7 @@ bin  lib  NOTICE.txt  source.properties
 
 Agora vamos adicionar as variaváveis de ambiente, se você reparar algumas pastas ainda não existem, mas calma elas irão ser criadas.
 
-editar o `/etc/profile` ou o ` ~/.bashrc` e adicionar no final do aquivo
+editar o `/etc/profile` ou o ` ~/.profile` e adicionar no final do aquivo
 
 {{< terminal >}}{{< highlight bash >}}
 export ANDROID_HOME=/opt/android/android-sdk-linux
