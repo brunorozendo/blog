@@ -26,12 +26,14 @@ image: "/images/posts/android-sdk.svg"
 {{</ table >}}
 
 
-### 0. Prequisitos
+### Prequisitos
 
  1. Ter o java 17 instalado
- 2. Intalar dependências
-    2.1. __Ubuntu 64__: ```sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386```
-    2.2. __Fedora 64__: ```sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686```
+ 2. Intalar dependências<br />
+    2.1. __Ubuntu 64__:
+        ```sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386```<br />
+    2.2. __Fedora 64__:
+         ```sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686```
 
 
 
@@ -53,16 +55,16 @@ Depois de baixado criar a seguinte estrutura de pastas (você pode fazer a sua.)
 {{< /terminal >}}
 
 
- - __android__: aqui ficaram todas as cosisa relacionadas ao android (mas no momentos só tem uma pasta: android-sdk-linux)
- - __android-sdk-linux__: aqui irá ficar todos os recurso **
+ - __android__: aqui ficaram todas as coisas relacionadas ao android (mas no momento só tem uma pasta: android-sdk-linux)
+ - __android-sdk-linux__: aqui irá ficaram todos os recurso **
 
 ** Você não irá mecher nessa pasta diretamente, todo o conteúdo dela será criado/excluido/alterado pelas ferramentas do próximo passo.
 
 
 
-Dentro da pasta `android-sdk-linux` descompacte o conteudo do zip baixado (`commandlinetools-linux-XXXXXXXXXXX.zip`), o resultado final será:
+Dentro da pasta `android-sdk-linux` descompacte o conteudo do zip baixado (`commandlinetools-linux-XXXXXXXXXXX.zip`), o resultado final será, você terá de renomar a pasta:
 
-{{< terminal >}}{{< highlight bash >}}$ cd /opt/android/android-sdk-linux/cmdline-tools/tools/bin
+{{< terminal >}}{{< highlight bash >}}$ cd /opt/android/android-sdk-linux/cmdline-tools/lasted
 $ ls
 bin  lib  NOTICE.txt  source.properties
 {{< /highlight >}}
@@ -76,12 +78,12 @@ Agora vamos adicionar as variaváveis de ambiente, se você reparar algumas past
 
 editar o `/etc/profile` ou o ` ~/.bashrc` e adicionar no final do aquivo
 
-{{< terminal >}}{{< highlight bash >}}export ANDROID_HOME=/opt/android/android-sdk-linux
-export ANDROID_HOME=/dev/tools/android/windows-android-sdk
+{{< terminal >}}{{< highlight bash >}}
+export ANDROID_HOME=/opt/android/android-sdk-linux
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/lasted/bin
-export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/emulator
 {{< /highlight >}}
 {{< /terminal >}}
 
@@ -103,21 +105,13 @@ No terminal digite `sdkmanager`
 Se a mensagem acima apareceu então fique feliz pois tudo está funcionando.
 
 
-Agora vamos a ao passo final
+### 4. Final: checando o instalador
 
-### 4. Final: instalando as dependências
+Agora vamos instalar algum pacote qualquer para testar se tudo está funcionando.
 
+Responda com `y` no final e espere(vai demorar um pouco, as dependências serão baixadas), No terminal digite:
 
-No terminal digite
-
-{{< terminal >}}{{< highlight bash >}}sdkmanager "tools"
-{{< /highlight >}}
-{{< /terminal >}}
-
-
-responda com `y` no final e espere(porque aqui vai demorar umpouco, ele vai baixar as dependências):
-
-{{< terminal >}}{{< highlight bash >}}$ sdkmanager tools
+{{< terminal >}}{{< highlight bash >}}$ sdkmanager emulator
 License android-sdk-license:            ] 10% Computing updates...              
 ---------------------------------------
 Terms and Conditions
@@ -144,6 +138,8 @@ Accept? (y/N):
 {{< /terminal >}}
 
 
-Se você for reparar a pasta `/opt/android/android-sdk-linux` tem mais contúdo agora.
+Se você for inspecionar a pasta `/opt/android/android-sdk-linux` tem mais conteúdo agora.
 
-Pronto!!!! agora sim está tudo instalado. agora é só aproveitar.
+Pronto! Agora sim, está tudo instalado, só aproveitar. 
+
+[Como sugestão que tal criar um emulator agora!](https://brunorozendo.com/post/criar-avd-gnu-linux.html)
