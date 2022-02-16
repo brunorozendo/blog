@@ -22,27 +22,23 @@ image: "/images/posts/android-sdk.svg"
 | 1 revisão      | 24/07/2017    |
 | 2 revisão      | 18/07/2020    |
 | 3 revisão      | 03/02/2021    |
+| 4 revisão      | 15/02/2022    |
 {{</ table >}}
 
 
 ### 0. Prequisitos
 
- 1. Ter o java 8 instalado
-
-
- 2. Se estiver no __Ubuntu 64__
-	```sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386```
-
- 2. Se estiver no __Fedora 64__
-	```sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686```
-
+ 1. Ter o java 17 instalado
+ 2. Intalar dependências
+    2.1. __Ubuntu 64__: ```sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386```
+    2.2. __Fedora 64__: ```sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686```
 
 
 
 ### 1. Download do `tools`
 
 
-Vá em [Android Studio > Downloads > Command line tools only > commandlinetools-linux-XXXXXXXXXXX.zip](https://developer.android.com/studio#downloads)
+Vá em [Android Studio > Downloads > Command line tools only > commandlinetools-linux-XXXXXXXXXXX.zip](https://developer.android.com/studio#command-tools)
 
 Espere a página carregar , clique em "I have read and agree with the above terms and conditions" (aceitar) e  faça o download.
 
