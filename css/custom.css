@@ -52,3 +52,11 @@
 .intro-header{
     box-shadow: 0 0 10px 0 #666666;
 }
+.container a{
+    color: #1b6d85;
+    text-decoration: underline;
+}
+
+.container  img{
+     max-width:600px;
+ }
