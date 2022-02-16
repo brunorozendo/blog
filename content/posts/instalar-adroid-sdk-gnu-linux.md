@@ -3,7 +3,7 @@ title: "Como Instalar o Android SDK no Gnu/Linux"
 description: "como instalar android tools"
 author:
   name: "Bruno Rozendo"
-date: 2020-07-18
+date: 2022-02-15
 draft: false
 tags:
 - "android"
