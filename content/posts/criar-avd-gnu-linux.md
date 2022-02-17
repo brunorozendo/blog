@@ -184,7 +184,7 @@ Agora vamos deixa esse emulador usavel!
    
    Procure pela linha ```hw.keyboard=no``` e substitua por ```hw.keyboard=yes```
 
-   [** Ctrl+C/Ctrl+V não é possivel com o teclado, mas há outras maneiras](https://stackoverflow.com/questions/3391160/paste-text-on-android-emulator).
+   ** [Ctrl+C/Ctrl+V não é possivel com o teclado, mas há outras maneiras](https://stackoverflow.com/questions/3391160/paste-text-on-android-emulator).
 
  - É possivel já deixar a `skin` configurada, para isso, busque pela linha `skin.path=_no_skin` e substitua, no caso ficou assim
 
