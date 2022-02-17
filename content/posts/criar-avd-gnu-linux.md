@@ -190,11 +190,13 @@ Agora vamos deixa esse emulador usavel!
 
    ```skin.path=/opt/android/sdk-android-linux/skins/nexus_5```
 
- - GPU: igual a skin, bsque pela linha `hw.gpu.enabled=no` e substitua por ```hw.gpu.enabled=true```
+ - GPU: igual a skin, busque pela linha `hw.gpu.enabled=no` e substitua por ```hw.gpu.enabled=true```
+
+ - Ram: igual a skin, busque pela linha `hw.ramSize` e substitua por ```hw.ramSize=4096M```
  
 
 Agora o novo comando para iniciar o simulador
 
-{{< terminal >}}{{< highlight bash >}} $emulator -avd bruno  -memory 4096 -accel on{{< /highlight >}}{{< /terminal >}}
+{{< terminal >}}{{< highlight bash >}} $emulator -avd bruno -accel on{{< /highlight >}}{{< /terminal >}}
 
 {{< image src="/images/posts/criar-avd-gnu-linux/final.png"  >}}
