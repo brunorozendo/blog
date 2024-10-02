@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vmware on Bruno Rozendo</title><link>https://brunorozendo.com/tags/vmware.html</link><description>Recent content in vmware on Bruno Rozendo</description><generator>Hugo -- gohugo.io</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Thu, 19 Feb 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/vmware/index.xml" rel="self" type="application/rss+xml"/><item><title>Error could not open dev vmmon</title><link>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</guid><description>O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.
-Could not open /dev/vmmon: No such file or directory. Please make sure that the kernel module `vmmon' is loaded.
-Esse erro aparece em *unix mas para resolve-lo é fácil.
-Terminal $ sudo vmware-modconfig --console --install-all A saida deve ser algo parecido com:
-Terminal Stopping VMware services: VMware Authentication Daemon done VM communication interface socket family done Virtual machine communication interface done Virtual machine monitor done Blocking file system done make: Entering directory &amp;#39;/tmp/modconfig-mQeEZQ/vmmon-only&amp;#39; Using kernel build system.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vmware on Bruno Rozendo</title><link>https://brunorozendo.com/tags/vmware.html</link><description>Recent content in Vmware on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Thu, 19 Feb 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/vmware/index.xml" rel="self" type="application/rss+xml"/><item><title>Error could not open dev vmmon</title><link>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</guid><description>&lt;p>O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.&lt;/p>
+&lt;blockquote>
+&lt;p>Could not open /dev/vmmon: No such file or directory.
+Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p>
+&lt;/blockquote>
+&lt;p>Esse erro aparece em *unix mas para resolve-lo é fácil.&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo vmware-modconfig --console --install-all&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item></channel></rss>
