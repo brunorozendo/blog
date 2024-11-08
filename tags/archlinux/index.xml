@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Archlinux on Bruno Rozendo</title><link>https://brunorozendo.com/tags/archlinux.html</link><description>Recent content in Archlinux on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>Como instalar o ArchLinux com LXDE (sem UEFFI)</title><link>https://brunorozendo.com/post/como-instalar-o-arch-linux-com-lxde.html</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/como-instalar-o-arch-linux-com-lxde.html</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Rv.&lt;/th>
+ &lt;th>Data&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Primeira revisão&lt;/td>
+ &lt;td>01/06/2015&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Segunda revisão&lt;/td>
+ &lt;td>28/06/2018&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Obs&lt;/strong>: A instalação a seguir e feita numa maquina real (não é maquina virtual) por causa disso a parte relacionada em conexão com a internet pode divergir de outros tutoriais.&lt;/p>
+&lt;p>Esse tutorial vai mostrar como instalar o Arch Linux com o gerenciador de janelas &lt;a href="https://lxde.org/">LXDE&lt;/a>. No momento em que se escreve esse post
+a versão é &lt;strong>Current Release: 2018.06.01&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>Atenção:&lt;/strong> a parte da instalação do Arch Linux é válida idependente da interface grafica a ser instalada.
+O que isso quer dizer é: Você pode fazer esse tutorial até a parte em que instala o Arch Linux, trocar de tutorial e instalar outra interface
+como &lt;a href="https://xfce.org/">XFCE&lt;/a>, &lt;a href="https://mate-desktop.org/pt/">Mate&lt;/a>, &lt;a href="https://launchpad.net/unity">Unity&lt;/a> ou &lt;a href="https://www.gnome.org/">Gnome&lt;/a>.&lt;/p></description></item><item><title>archlinux wifi</title><link>https://brunorozendo.com/post/archlinux-wifi.html</link><pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/archlinux-wifi.html</guid><description>&lt;p>O método apresentado aqui server para Desktop Envirement tais como Unity, XFCE, LXDE,&amp;hellip;&lt;/p>
+&lt;p>Nós vamos usa o NetworkManager. Este que é usando em quase todas as distros linux.&lt;/p>
+&lt;p>Vamos tomar como ponto de partida o momento em que se instala o Arch Linux e que se tem uma conexão com a internet.&lt;/p>
+&lt;p>Caso esse não seja o seu caso digite no terminal :&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>root@archlinux ~# ping -c4 google.com&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+&lt;p>Caso a sua saida tenha sido algo parecido com:&lt;/p></description></item></channel></rss>

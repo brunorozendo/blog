@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avd on Bruno Rozendo</title><link>https://brunorozendo.com/tags/avd.html</link><description>Recent content in Avd on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/avd/index.xml" rel="self" type="application/rss+xml"/><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>https://brunorozendo.com/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped">
+ &lt;thead>
+ &lt;tr>
+ &lt;th>rev.&lt;/th>
+ &lt;th>data&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1 revisão&lt;/td>
+ &lt;td>26/07/2017&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2 revisão&lt;/td>
+ &lt;td>16/02/2022&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+
+&lt;h4 id="prequisitos">Prequisitos&lt;/h4>
+&lt;p>Ter o &lt;a href="https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html">android sdk instalado&lt;/a>&lt;/p>
+&lt;h4 id="1-criar-avd">1. Criar avd&lt;/h4>
+&lt;p>Uma vez que que já tenha instalado o sdk tudo fica bem mais fácil.&lt;/p>
+&lt;p>Supondo que queremos rodar uma versão do &lt;code>Android 5.0 (Lollipop)&lt;/code> abra o terminal e vamos instalar os seguites pacotes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>platforms;android-22&lt;/code>&lt;/li>
+&lt;li>&lt;code>system-images;android-22;default;x86_64&lt;/code>&lt;/li>
+&lt;li>&lt;code>emulator&lt;/code>&lt;/li>
+&lt;li>&lt;code>platform-tools&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>No terminal&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;platforms;android-22&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Computing updates...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;system-images;android-22;default;x86_64&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Computing updates...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;emulator&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Unzipping... emulator/qemu/linux-
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;platform-tools&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Unzipping... platform-tools/systr&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+
+&lt;p>** Caso queira ver todas as opções possiveis digite no terminal&lt;/p></description></item></channel></rss>

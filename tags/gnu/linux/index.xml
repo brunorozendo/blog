@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gnu/Linux on Bruno Rozendo</title><link>https://brunorozendo.com/tags/gnu/linux.html</link><description>Recent content in Gnu/Linux on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/gnu/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>https://brunorozendo.com/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped">
+ &lt;thead>
+ &lt;tr>
+ &lt;th>rev.&lt;/th>
+ &lt;th>data&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1 revisão&lt;/td>
+ &lt;td>26/07/2017&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2 revisão&lt;/td>
+ &lt;td>16/02/2022&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+
+&lt;h4 id="prequisitos">Prequisitos&lt;/h4>
+&lt;p>Ter o &lt;a href="https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html">android sdk instalado&lt;/a>&lt;/p>
+&lt;h4 id="1-criar-avd">1. Criar avd&lt;/h4>
+&lt;p>Uma vez que que já tenha instalado o sdk tudo fica bem mais fácil.&lt;/p>
+&lt;p>Supondo que queremos rodar uma versão do &lt;code>Android 5.0 (Lollipop)&lt;/code> abra o terminal e vamos instalar os seguites pacotes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>platforms;android-22&lt;/code>&lt;/li>
+&lt;li>&lt;code>system-images;android-22;default;x86_64&lt;/code>&lt;/li>
+&lt;li>&lt;code>emulator&lt;/code>&lt;/li>
+&lt;li>&lt;code>platform-tools&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>No terminal&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;platforms;android-22&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Computing updates...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;system-images;android-22;default;x86_64&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Computing updates...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;emulator&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Unzipping... emulator/qemu/linux-
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sdkmanager &lt;span style="color:#e6db74">&amp;#34;platform-tools&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[=======================================]&lt;/span> 100% Unzipping... platform-tools/systr&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+
+&lt;p>** Caso queira ver todas as opções possiveis digite no terminal&lt;/p></description></item><item><title>Como Instalar o Android SDK no Gnu/Linux</title><link>https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html</guid><description>&lt;table class="table table-striped">
+ &lt;thead>
+ &lt;tr>
+ &lt;th>rev.&lt;/th>
+ &lt;th>data&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1 revisão&lt;/td>
+ &lt;td>24/07/2017&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2 revisão&lt;/td>
+ &lt;td>18/07/2020&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>3 revisão&lt;/td>
+ &lt;td>03/02/2021&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4 revisão&lt;/td>
+ &lt;td>15/02/2022&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+
+&lt;h3 id="prequisitos">Prequisitos&lt;/h3>
+&lt;ol>
+&lt;li>Ter o java 17 instalado&lt;/li>
+&lt;li>Intalar dependências&lt;br>
+2.1. &lt;strong>Ubuntu 64&lt;/strong>:
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+
+2.2. &lt;strong>Fedora 64&lt;/strong>:
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="1-download-do-command-tools">1. Download do &lt;code>command-tools&lt;/code>&lt;/h3>
+&lt;p>Vá em &lt;a href="https://developer.android.com/studio#command-tools">Android Studio &amp;gt; Downloads &amp;gt; Command line tools only &amp;gt; commandlinetools-linux-XXXXXXXXXXX.zip&lt;/a>&lt;/p>
+&lt;p>Espere a página carregar, clique em &amp;ldquo;I have read and agree with the above terms and conditions&amp;rdquo; (aceitar) e faça o download.&lt;/p></description></item><item><title>Como instalar o ArchLinux com LXDE (sem UEFFI)</title><link>https://brunorozendo.com/post/como-instalar-o-arch-linux-com-lxde.html</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/como-instalar-o-arch-linux-com-lxde.html</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Rv.&lt;/th>
+ &lt;th>Data&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Primeira revisão&lt;/td>
+ &lt;td>01/06/2015&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Segunda revisão&lt;/td>
+ &lt;td>28/06/2018&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Obs&lt;/strong>: A instalação a seguir e feita numa maquina real (não é maquina virtual) por causa disso a parte relacionada em conexão com a internet pode divergir de outros tutoriais.&lt;/p>
+&lt;p>Esse tutorial vai mostrar como instalar o Arch Linux com o gerenciador de janelas &lt;a href="https://lxde.org/">LXDE&lt;/a>. No momento em que se escreve esse post
+a versão é &lt;strong>Current Release: 2018.06.01&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>Atenção:&lt;/strong> a parte da instalação do Arch Linux é válida idependente da interface grafica a ser instalada.
+O que isso quer dizer é: Você pode fazer esse tutorial até a parte em que instala o Arch Linux, trocar de tutorial e instalar outra interface
+como &lt;a href="https://xfce.org/">XFCE&lt;/a>, &lt;a href="https://mate-desktop.org/pt/">Mate&lt;/a>, &lt;a href="https://launchpad.net/unity">Unity&lt;/a> ou &lt;a href="https://www.gnome.org/">Gnome&lt;/a>.&lt;/p></description></item><item><title>Instalando Gradle No Gnu/Linux</title><link>https://brunorozendo.com/post/instalando-gradle-no-gnu-linux.html</link><pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/instalando-gradle-no-gnu-linux.html</guid><description>&lt;p>Gradle é uma poderosa ferramenta para o gerenciamento de build e dependências em java(e capaz de se extender para outras linguagens)&lt;/p>
+&lt;h4 id="0-prerequisitos">0. Prerequisitos&lt;/h4>
+&lt;p>Ter o java 8 instalado&lt;/p>
+&lt;h4 id="1-dowload-do-gradle">1. Dowload do gradle&lt;/h4>
+&lt;p>Vá em &lt;a href="https://gradle.org/releases/">https://gradle.org/releases/&lt;/a> e baixe a versão mais recente.&lt;/p>
+&lt;p>Depois disso escolha uma pasta do no seu computador para descompactar, no meu caso será &lt;code>/opt/gradle&lt;/code>&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>bruno@ubuntu:~$ ls /opt/gradle/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gradle-4.0.2-all.zip gradle-4.0.2 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bruno@ubuntu:~$&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+&lt;p>Agora basta adicionar no &lt;code>$PATH&lt;/code> so sistema opercional.&lt;/p></description></item><item><title>Criar Database Oracle 11g</title><link>https://brunorozendo.com/post/criar-database-oracle.html</link><pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-database-oracle.html</guid><description>&lt;p>Por curiosidade instalei um banco oracle numa maquina ubuntu e para minha surpresa criar uma database e bem mais complexo.&lt;/p>
+&lt;p>Exemplo válidos em mysql e postgre, mas que não funciona no oracle.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">create&lt;/span> &lt;span style="color:#66d9ef">database&lt;/span> teste;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Eis aqui a mágica, precisamos criar um &lt;code>TABLESPACE&lt;/code>, &lt;code>DATAFILE&lt;/code>, &lt;code>USER&lt;/code> e dar as permissões (&lt;code>GRANT&lt;/code>).&lt;/p>
+&lt;p>O produto final:&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>bruno@ubuntu:~$: sqlplus / as sysdba
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SQL*Plus: Release 11.2.0.2.0 Production on Qui Jul &lt;span style="color:#ae81ff">27&lt;/span> 11:39:36 &lt;span style="color:#ae81ff">2017&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copyright &lt;span style="color:#f92672">(&lt;/span>c&lt;span style="color:#f92672">)&lt;/span> 1982, 2011, Oracle. All rights reserved.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SQL&amp;gt; connect / as sysdba
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Conectado a uma instância inativa.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SQL&amp;gt; CREATE TABLESPACE &amp;lt;database&amp;gt; DATAFILE &lt;span style="color:#e6db74">&amp;#39;/u01/app/oracle/oradata/XE/&amp;lt;database&amp;gt;.dbf&amp;#39;&lt;/span> SIZE 100m AUTOEXTEND ON NEXT 100m EXTENT MANAGEMENT LOCAL AUTOALLOCATE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Tablespace criado.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SQL&amp;gt; CREATE USER &amp;lt;database&amp;gt; IDENTIFIED BY &amp;lt;database&amp;gt; DEFAULT TABLESPACE &amp;lt;database&amp;gt; TEMPORARY TABLESPACE temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Usuário criado.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SQL&amp;gt; grant all privileges to &amp;lt;database&amp;gt; identified by &amp;lt;database&amp;gt;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Concessão bem-sucedida.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SQL&amp;gt; &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+&lt;p>Feito! agora basta conecatar com sua ferramenta de preferência.&lt;/p></description></item><item><title>archlinux wifi</title><link>https://brunorozendo.com/post/archlinux-wifi.html</link><pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/archlinux-wifi.html</guid><description>&lt;p>O método apresentado aqui server para Desktop Envirement tais como Unity, XFCE, LXDE,&amp;hellip;&lt;/p>
+&lt;p>Nós vamos usa o NetworkManager. Este que é usando em quase todas as distros linux.&lt;/p>
+&lt;p>Vamos tomar como ponto de partida o momento em que se instala o Arch Linux e que se tem uma conexão com a internet.&lt;/p>
+&lt;p>Caso esse não seja o seu caso digite no terminal :&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>root@archlinux ~# ping -c4 google.com&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+&lt;p>Caso a sua saida tenha sido algo parecido com:&lt;/p></description></item></channel></rss>

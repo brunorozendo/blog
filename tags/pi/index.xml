@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pi on Bruno Rozendo</title><link>https://brunorozendo.com/tags/pi.html</link><description>Recent content in Pi on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Sat, 12 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/pi/index.xml" rel="self" type="application/rss+xml"/><item><title>Calcular π (pi)</title><link>https://brunorozendo.com/post/calcular-pi.html</link><pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/calcular-pi.html</guid><description>&lt;p>Seja a fórmula matemática para calcular Pi (&lt;!-- raw HTML omitted -->Π|π&lt;!-- raw HTML omitted -->)&lt;/p>
+
+&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ &lt;mi>&amp;pi;&lt;/mi>
+ &lt;mo>=&lt;/mo>
+ &lt;mn>4&lt;/mn>
+ &lt;mfenced separators="">
+ &lt;mn>1&lt;/mn>
+ &lt;mo>&amp;minus;&lt;/mo>
+ &lt;mfrac>
+ &lt;mn>1&lt;/mn>
+ &lt;mn>3&lt;/mn>
+ &lt;/mfrac>
+ &lt;mo>&amp;plus;&lt;/mo>
+ &lt;mfrac>
+ &lt;mn>1&lt;/mn>
+ &lt;mn>5&lt;/mn>
+ &lt;/mfrac>
+ &lt;mo>&amp;minus;&lt;/mo>
+ &lt;mfrac>
+ &lt;mn>1&lt;/mn>
+ &lt;mn>7&lt;/mn>
+ &lt;/mfrac>
+ &lt;mo>&amp;plus;&lt;/mo>
+ &lt;mfrac>
+ &lt;mn>1&lt;/mn>
+ &lt;mn>9&lt;/mn>
+ &lt;/mfrac>
+ &lt;mi>&amp;ctdot;&lt;/mi>
+ &lt;/mfenced>
+&lt;/math>
+
+&lt;p>Fazendo algumas operações algebricas para que a fórmula fique mais fácil de trabalha no algoritmo:&lt;/p>
+
+&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+&lt;mi>&amp;pi;&lt;/mi>
+ &lt;mo>=&lt;/mo>
+&lt;mfrac>
+ &lt;mn>4&lt;/mn>
+ &lt;mn>1&lt;/mn>
+&lt;/mfrac>
+&lt;mo>&amp;minus;&lt;/mo>
+&lt;mfrac>
+ &lt;mn>4&lt;/mn>
+ &lt;mn>3&lt;/mn>
+&lt;/mfrac>
+&lt;mo>&amp;plus;&lt;/mo>
+&lt;mfrac>
+ &lt;mn>4&lt;/mn>
+ &lt;mn>5&lt;/mn>
+&lt;/mfrac>
+&lt;mo>&amp;minus;&lt;/mo>
+&lt;mfrac>
+ &lt;mn>4&lt;/mn>
+ &lt;mn>7&lt;/mn>
+&lt;/mfrac>
+&lt;mo>&amp;plus;&lt;/mo>
+&lt;mfrac>
+ &lt;mn>4&lt;/mn>
+ &lt;mn>9&lt;/mn>
+&lt;/mfrac>
+&lt;mi>&amp;ctdot;&lt;/mi>
+&lt;/math>
+
+&lt;p>o algoritmo:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.math.BigDecimal;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.math.MathContext;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.math.RoundingMode;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Pi&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Pi&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> precisao &lt;span style="color:#f92672">=&lt;/span> 15000;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MathContext mx &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> MathContext(precisao, RoundingMode.&lt;span style="color:#a6e22e">HALF_EVEN&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BigDecimal quatro &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> BigDecimal( 4, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BigDecimal pi &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> BigDecimal( 0, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BigDecimal sinal &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> BigDecimal( 1, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BigDecimal incrementoDenominador &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> BigDecimal( 2, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BigDecimal denominador &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> BigDecimal( 1, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 0 ; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> precisao ; i&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BigDecimal tmp &lt;span style="color:#f92672">=&lt;/span> quatro.&lt;span style="color:#a6e22e">divide&lt;/span>(denominador, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#f92672">=&lt;/span> tmp.&lt;span style="color:#a6e22e">multiply&lt;/span>(sinal, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi &lt;span style="color:#f92672">=&lt;/span> pi.&lt;span style="color:#a6e22e">add&lt;/span>(tmp, mx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sinal &lt;span style="color:#f92672">=&lt;/span> sinal.&lt;span style="color:#a6e22e">negate&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> denominador &lt;span style="color:#f92672">=&lt;/span> denominador.&lt;span style="color:#a6e22e">add&lt;/span>(incrementoDenominador);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">print&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\u03c0: &amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(pi);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">new&lt;/span> Pi();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

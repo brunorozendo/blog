@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vmware on Bruno Rozendo</title><link>https://brunorozendo.com/tags/vmware.html</link><description>Recent content in Vmware on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Thu, 19 Feb 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/vmware/index.xml" rel="self" type="application/rss+xml"/><item><title>Error could not open dev vmmon</title><link>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</guid><description>&lt;p>O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.&lt;/p>
+&lt;blockquote>
+&lt;p>Could not open /dev/vmmon: No such file or directory.
+Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p>
+&lt;/blockquote>
+&lt;p>Esse erro aparece em *unix mas para resolve-lo é fácil.&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo vmware-modconfig --console --install-all&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+&lt;p>A saida deve ser algo parecido com:&lt;/p>
+&lt;div class="terminal">
+ &lt;div class="header">
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
+ &lt;div class="title">Terminal&lt;/div>
+ &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Stopping VMware services:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> VMware Authentication Daemon &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> VM communication interface socket family &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Virtual machine communication interface &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Virtual machine monitor &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blocking file system &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make: Entering directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmmon-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Using kernel build system.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/sbin/make -C /lib/modules/3.18.5-1-ARCH/build/include/.. SUBDIRS&lt;span style="color:#f92672">=&lt;/span>$PWD SRCROOT&lt;span style="color:#f92672">=&lt;/span>$PWD/. &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> MODULEBUILDDIR&lt;span style="color:#f92672">=&lt;/span> modules
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Entering directory &lt;span style="color:#e6db74">&amp;#39;/usr/lib/modules/3.18.5-1-ARCH/build&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/linux/driverLog.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/linux/driver.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/linux/hostif.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/memtrack.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/apic.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/hashFunc.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/vmx86.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/cpuid.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/task.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/comport.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/common/phystrack.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/vmcore/moduleloop.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/tmp/modconfig-mQeEZQ/vmmon-only/linux/driver.c:1332:1: warning: always_inline &lt;span style="color:#66d9ef">function&lt;/span> might not be inlinable &lt;span style="color:#f92672">[&lt;/span>-Wattributes&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LinuxDriverSyncReadTSCs&lt;span style="color:#f92672">(&lt;/span>uint64 *delta&lt;span style="color:#f92672">)&lt;/span> // OUT: TSC max - TSC min
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LD &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/vmmon.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Building modules, stage 2.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MODPOST &lt;span style="color:#ae81ff">1&lt;/span> modules
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC /tmp/modconfig-mQeEZQ/vmmon-only/vmmon.mod.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LD &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmmon-only/vmmon.ko
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Leaving directory &lt;span style="color:#e6db74">&amp;#39;/usr/lib/modules/3.18.5-1-ARCH/build&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/sbin/make -C $PWD SRCROOT&lt;span style="color:#f92672">=&lt;/span>$PWD/. &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> MODULEBUILDDIR&lt;span style="color:#f92672">=&lt;/span> postbuild
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Entering directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmmon-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;postbuild&amp;#39;&lt;/span> is up to date.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Leaving directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmmon-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp -f vmmon.ko ./../vmmon.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make: Leaving directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmmon-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make: Entering directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmnet-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Using kernel build system.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/sbin/make -C /lib/modules/3.18.5-1-ARCH/build/include/.. SUBDIRS&lt;span style="color:#f92672">=&lt;/span>$PWD SRCROOT&lt;span style="color:#f92672">=&lt;/span>$PWD/. &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> MODULEBUILDDIR&lt;span style="color:#f92672">=&lt;/span> modules
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Entering directory &lt;span style="color:#e6db74">&amp;#39;/usr/lib/modules/3.18.5-1-ARCH/build&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/driver.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/userif.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/hub.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/netif.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In file included from include/linux/pci.h:34:0,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/compat_netdevice.h:27,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/netif.c:43:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>include/linux/pci_ids.h:2248:0: warning: &lt;span style="color:#e6db74">&amp;#34;PCI_VENDOR_ID_VMWARE&amp;#34;&lt;/span> re-definido
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#define PCI_VENDOR_ID_VMWARE 0x15ad&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In file included from /tmp/modconfig-mQeEZQ/vmnet-only/net.h:38:0,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/vnetInt.h:26,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/netif.c:42:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/tmp/modconfig-mQeEZQ/vmnet-only/vm_device_version.h:56:0: note: essa é a localização da definição anterior
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#define PCI_VENDOR_ID_VMWARE 0x15AD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/bridge.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/procfs.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/smac_compat.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/smac.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/vnetEvent.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/vnetUserListener.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In file included from /tmp/modconfig-mQeEZQ/vmnet-only/net.h:38:0,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/vnetInt.h:26,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/bridge.c:52:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/tmp/modconfig-mQeEZQ/vmnet-only/vm_device_version.h:56:0: warning: &lt;span style="color:#e6db74">&amp;#34;PCI_VENDOR_ID_VMWARE&amp;#34;&lt;/span> re-definido
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#define PCI_VENDOR_ID_VMWARE 0x15AD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In file included from include/linux/pci.h:34:0,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/compat_netdevice.h:27,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> from /tmp/modconfig-mQeEZQ/vmnet-only/bridge.c:51:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>include/linux/pci_ids.h:2248:0: note: essa é a localização da definição anterior
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#define PCI_VENDOR_ID_VMWARE 0x15ad&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LD &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/vmnet.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Building modules, stage 2.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MODPOST &lt;span style="color:#ae81ff">1&lt;/span> modules
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CC /tmp/modconfig-mQeEZQ/vmnet-only/vmnet.mod.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LD &lt;span style="color:#f92672">[&lt;/span>M&lt;span style="color:#f92672">]&lt;/span> /tmp/modconfig-mQeEZQ/vmnet-only/vmnet.ko
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Leaving directory &lt;span style="color:#e6db74">&amp;#39;/usr/lib/modules/3.18.5-1-ARCH/build&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/sbin/make -C $PWD SRCROOT&lt;span style="color:#f92672">=&lt;/span>$PWD/. &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> MODULEBUILDDIR&lt;span style="color:#f92672">=&lt;/span> postbuild
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Entering directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmnet-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;postbuild&amp;#39;&lt;/span> is up to date.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make&lt;span style="color:#f92672">[&lt;/span>1&lt;span style="color:#f92672">]&lt;/span>: Leaving directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmnet-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp -f vmnet.ko ./../vmnet.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make: Leaving directory &lt;span style="color:#e6db74">&amp;#39;/tmp/modconfig-mQeEZQ/vmnet-only&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Starting VMware services:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Virtual machine monitor &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Virtual machine communication interface &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> VM communication interface socket family &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blocking file system &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Virtual ethernet &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> VMware Authentication Daemon &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Shared Memory Available &lt;span style="color:#66d9ef">done&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+&lt;h2 id="referências">referências&lt;/h2>
+&lt;p>&lt;a href="http://blog.nowherelan.com/2014/12/03/vmware-workstation-10-error-could-not-open-devvmmon-no-such-file-or-directory-please-make-sure-that-the-kernel-module-vmmon-is-loaded/">nowhereLAN&lt;/a>&lt;/p></description></item></channel></rss>
