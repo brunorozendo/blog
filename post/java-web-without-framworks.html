@@ -1,0 +1,465 @@
+<!doctype html><html lang=pt-BR><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="como instalar android tools"><meta name=author content="Bruno Rozendo"><meta name=keywords content><title>Java web without frameworks -- Bruno Rozendo</title>
+<link href=https://brunorozendo.com//css/bootstrap.min.css rel=stylesheet><link href=https://brunorozendo.com//css/clean-blog.min.css rel=stylesheet><link rel=stylesheet type=text/css href=https://brunorozendo.com/css/custom.css><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet><link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel=stylesheet><link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel=stylesheet></head><body><nav class="navbar navbar-default navbar-custom navbar-fixed-top"><div class=container-fluid><div class="navbar-header page-scroll"><button type=button class=navbar-toggle data-toggle=collapse data-target=#bs-example-navbar-collapse-1>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://brunorozendo.com/>Bruno Rozendo</a></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav navbar-right"><li><a href=https://brunorozendo.com/>home</a></li><li><a href=https://brunorozendo.com/posts.html>Posts</a></li></ul></div></div></nav><header class=intro-header style=background-image:url(https://brunorozendo.com///images/posts/android-sdk.svg)><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Java web without frameworks</h1><h2 class=subheading>como instalar android tools</h2><span class=meta>Posted by <a href=#>Bruno Rozendo</a> on Sun, Apr 27, 2025<br>In<br>Tags <a href=https://brunorozendo.com/tags/java>java</a>, <a href=https://brunorozendo.com/tags/jakarta-ee>jakarta ee</a>, <a href=https://brunorozendo.com/tags/tomcat>tomcat</a></span></div></div></div></div><div class="container-fluid imagecredit"><div class=row><div class=".col-sm text-right"><a href=http://www.freepik.com>Designed by pikisuperstar / Freepik</a></div></div></div></header><article><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><h1 id=java-web-before-all-the-frameworks>Java Web, Before All the Frameworks</h1><p>This blog post is designed for new developers who are just starting their journey in web development with Java. We&rsquo;ll explore how to build a web application using Jakarta EE (formerly Java EE) without relying on modern frameworks like Spring or Quarkus. Understanding these fundamentals will give you a solid foundation for working with any Java web technology.</p><h2 id=1-project-creation>1. Project Creation</h2><p>Creating a Java web application starts with setting up a project structure. In this example, we&rsquo;re using Gradle as our build tool, but you could also use Maven or even a simple directory structure.</p><p>The first step is to create a new directory for your project and initialize it with Gradle. This can be done using the Gradle init command or by creating the necessary files manually.</p><p>Our project is a simple CRUD (Create, Read, Update, Delete) application that manages user data. It demonstrates the core components of a Java web application:</p><ul><li>Servlets for handling HTTP requests</li><li>JSP (JavaServer Pages) for rendering HTML</li><li>JDBC for database access</li><li>Jakarta EE APIs for web development</li></ul><h2 id=2-gradle-configuration>2. Gradle Configuration</h2><p>The <code>build.gradle</code> file is the heart of our project configuration. It defines the project dependencies, Java version, and build tasks.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle><span style=display:flex><span>plugins <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  id <span style=color:#e6db74>&#39;war&#39;</span>
+</span></span><span style=display:flex><span>  id <span style=color:#e6db74>&#39;eclipse-wtp&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>repositories <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  mavenCentral<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>version <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;1.0&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>java<span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>    sourceCompatibility <span style=color:#f92672>=</span> JavaVersion<span style=color:#f92672>.</span><span style=color:#a6e22e>VERSION_21</span>
+</span></span><span style=display:flex><span>    targetCompatibility <span style=color:#f92672>=</span> JavaVersion<span style=color:#f92672>.</span><span style=color:#a6e22e>VERSION_21</span>
+</span></span><span style=display:flex><span>    toolchain <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        languageVersion <span style=color:#f92672>=</span> JavaLanguageVersion<span style=color:#f92672>.</span><span style=color:#a6e22e>of</span><span style=color:#f92672>(</span><span style=color:#ae81ff>21</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>dependencies <span style=color:#f92672>{</span>    
+</span></span><span style=display:flex><span>    providedRuntime <span style=color:#e6db74>&#34;jakarta.el:jakarta.el-api:6.0.1&#34;</span>
+</span></span><span style=display:flex><span>    providedRuntime <span style=color:#e6db74>&#34;jakarta.servlet:jakarta.servlet-api:6.1.0&#34;</span>
+</span></span><span style=display:flex><span>    providedRuntime <span style=color:#e6db74>&#34;jakarta.servlet.jsp:jakarta.servlet.jsp-api:4.0.0&#34;</span>
+</span></span><span style=display:flex><span>    providedRuntime <span style=color:#e6db74>&#39;jakarta.websocket:jakarta.websocket-api:2.2.0&#39;</span>
+</span></span><span style=display:flex><span>    providedRuntime <span style=color:#e6db74>&#39;jakarta.authentication:jakarta.authentication-api:3.1.0&#39;</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    implementation  <span style=color:#e6db74>&#34;jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2&#34;</span>
+</span></span><span style=display:flex><span>    implementation  <span style=color:#e6db74>&#34;org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Let&rsquo;s break down what this configuration does:</p><ul><li>The <code>war</code> plugin enables building a Web Application Archive (WAR) file, which is the standard format for deploying Java web applications.</li><li>The <code>eclipse-wtp</code> plugin adds support for Eclipse Web Tools Platform, useful if you&rsquo;re using Eclipse as your IDE.</li><li>We&rsquo;re using Java 21 for this project.</li><li>The dependencies section includes:<ul><li>Jakarta EE APIs for servlets, JSP, and other web components (marked as <code>providedRuntime</code> because the server provides them)</li><li>JSTL (JSP Standard Tag Library) for using tags in our JSP files</li></ul></li></ul><h2 id=3-project-structure>3. Project Structure</h2><p>A typical Java web application follows a standard directory structure:</p><pre tabindex=0><code>src/
+├── main/
+│   ├── java/              # Java source files
+│   │   └── com/
+│   │       └── crud/
+│   │           ├── Base.java
+│   │           ├── IndexController.java
+│   │           ├── SampleController.java
+│   │           └── db/
+│   │               ├── DatabaseConfig.java
+│   │               ├── UserController.java
+│   │               └── UserDAO.java
+│   ├── resources/         # Resources like properties files
+│   │   └── db/
+│   │       └── init.sql
+│   └── webapp/            # Web application files
+│       └── WEB-INF/
+│           ├── web.xml    # Deployment descriptor
+│           ├── layout.jsp
+│           ├── index.jsp
+│           ├── users.jsp
+│           ├── sample.jsp
+│           └── error.jsp
+build.gradle                # Gradle build file
+settings.gradle             # Gradle settings
+</code></pre><p>This structure separates our code into logical components:</p><ul><li>Java source files in <code>src/main/java</code></li><li>Resource files in <code>src/main/resources</code></li><li>Web files in <code>src/main/webapp</code></li></ul><p>The <code>WEB-INF</code> directory is special - files in this directory are not directly accessible by clients, providing security for sensitive files like JSPs that contain business logic.</p><h2 id=4-jakarta-ee-11-and-tomcat>4. Jakarta EE 11 and Tomcat</h2><p>Jakarta EE (formerly Java EE) is a set of specifications that define the standard APIs for enterprise Java development. Tomcat is a servlet container that implements the Jakarta Servlet, JSP, and WebSocket specifications.</p><h3 id=the-webxml-file>The web.xml File</h3><p>The <code>web.xml</code> file, also known as the deployment descriptor, is a crucial configuration file for Jakarta EE web applications. It defines how the web server (like Tomcat) should handle requests, map servlets to URLs, and configure resources.</p><p>Here&rsquo;s our <code>web.xml</code> file:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;web-app</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;https://jakarta.ee/xml/ns/jakartaee&#34;</span>
+</span></span><span style=display:flex><span>         <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style=display:flex><span>         <span style=color:#a6e22e>xsi:schemaLocation=</span><span style=color:#e6db74>&#34;https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd&#34;</span>
+</span></span><span style=display:flex><span>         <span style=color:#a6e22e>version=</span><span style=color:#e6db74>&#34;6.0&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;display-name&gt;</span>A Simple Application<span style=color:#f92672>&lt;/display-name&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;servlet&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-name&gt;</span>IndexController<span style=color:#f92672>&lt;/servlet-name&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-class&gt;</span>com.crud.IndexController<span style=color:#f92672>&lt;/servlet-class&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/servlet&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;servlet-mapping&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-name&gt;</span>IndexController<span style=color:#f92672>&lt;/servlet-name&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;url-pattern&gt;</span>/<span style=color:#f92672>&lt;/url-pattern&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/servlet-mapping&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;servlet&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-name&gt;</span>SampleController<span style=color:#f92672>&lt;/servlet-name&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-class&gt;</span>com.crud.SampleController<span style=color:#f92672>&lt;/servlet-class&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/servlet&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;servlet-mapping&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-name&gt;</span>SampleController<span style=color:#f92672>&lt;/servlet-name&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;url-pattern&gt;</span>/sample<span style=color:#f92672>&lt;/url-pattern&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/servlet-mapping&gt;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;servlet&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-name&gt;</span>UserController<span style=color:#f92672>&lt;/servlet-name&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-class&gt;</span>com.crud.db.UserController<span style=color:#f92672>&lt;/servlet-class&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/servlet&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;servlet-mapping&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;servlet-name&gt;</span>UserController<span style=color:#f92672>&lt;/servlet-name&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;url-pattern&gt;</span>/users/*<span style=color:#f92672>&lt;/url-pattern&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/servlet-mapping&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>&lt;!-- JNDI DataSource Reference --&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;resource-ref&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;description&gt;</span>PostgreSQL DataSource<span style=color:#f92672>&lt;/description&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;res-ref-name&gt;</span>jdbc/PostgresDB<span style=color:#f92672>&lt;/res-ref-name&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;res-type&gt;</span>javax.sql.DataSource<span style=color:#f92672>&lt;/res-type&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;res-auth&gt;</span>Container<span style=color:#f92672>&lt;/res-auth&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/resource-ref&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/web-app&gt;</span>
+</span></span></code></pre></div><p>Let&rsquo;s break down the key elements:</p><ul><li>The root <code>&lt;web-app></code> element defines the Jakarta EE version (6.0) and XML namespaces.</li><li><code>&lt;servlet></code> elements define servlet classes and give them names.</li><li><code>&lt;servlet-mapping></code> elements map servlet names to URL patterns.</li><li><code>&lt;resource-ref></code> defines a reference to a resource, in this case, a JNDI DataSource for database connections.</li></ul><p>The URL patterns determine which servlet handles which requests:</p><ul><li><code>/</code> (root) is handled by IndexController</li><li><code>/sample</code> is handled by SampleController</li><li><code>/users/*</code> is handled by UserController (the <code>*</code> means it handles all paths starting with <code>/users/</code>)</li></ul><p>This configuration allows the server to route incoming HTTP requests to the appropriate servlet based on the URL.</p><h2 id=5-servlets>5. Servlets</h2><p>Servlets are Java classes that handle HTTP requests and generate responses. They are the foundation of Java web applications, providing a way to process user input, interact with databases, and generate dynamic content.</p><p>Here&rsquo;s an example of a simple servlet from our project, the <code>IndexController</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.crud;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.ArrayList;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.http.HttpServletRequest;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.http.HttpServletResponse;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>IndexController</span> <span style=color:#66d9ef>extends</span> Base {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>6874811120813632685L;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doGet</span>(HttpServletRequest req, HttpServletResponse res) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        req.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;someVariable&#34;</span>, <span style=color:#e6db74>&#34;Um valor aqui&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> list <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span>();
+</span></span><span style=display:flex><span>        list.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;item 1&#34;</span>);
+</span></span><span style=display:flex><span>        list.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;item 2&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        req.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;someList&#34;</span>, list);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>view</span>(<span style=color:#e6db74>&#34;/WEB-INF/index.jsp&#34;</span>, req, res);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This servlet extends a base class and overrides the <code>doGet</code> method to handle HTTP GET requests. It:</p><ol><li>Sets attributes in the request object (a string and a list)</li><li>Forwards the request to a JSP file for rendering</li></ol><p>For more complex operations, like database access, we have the <code>UserController</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.crud.db;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.http.HttpServletRequest;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.http.HttpServletResponse;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.crud.Base;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.Serial;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.List;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UserController</span> <span style=color:#66d9ef>extends</span> Base {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> UserDAO userDAO <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> UserDAO();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doGet</span>(HttpServletRequest req, HttpServletResponse res) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            String pathInfo <span style=color:#f92672>=</span> req.<span style=color:#a6e22e>getPathInfo</span>();
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (pathInfo <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> pathInfo.<span style=color:#a6e22e>equals</span>(<span style=color:#e6db74>&#34;/&#34;</span>)) {
+</span></span><span style=display:flex><span>                <span style=color:#75715e>// List all users</span>
+</span></span><span style=display:flex><span>                List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> users <span style=color:#f92672>=</span> userDAO.<span style=color:#a6e22e>getAllUsers</span>();
+</span></span><span style=display:flex><span>                req.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;users&#34;</span>, users);
+</span></span><span style=display:flex><span>                req.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;pageTitle&#34;</span>, <span style=color:#e6db74>&#34;User List&#34;</span>);
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>view</span>(<span style=color:#e6db74>&#34;/WEB-INF/users.jsp&#34;</span>, req, res);
+</span></span><span style=display:flex><span>            } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>                <span style=color:#75715e>// Get single user</span>
+</span></span><span style=display:flex><span>                String userId <span style=color:#f92672>=</span> pathInfo.<span style=color:#a6e22e>substring</span>(1);
+</span></span><span style=display:flex><span>                String user <span style=color:#f92672>=</span> userDAO.<span style=color:#a6e22e>getUser</span>(userId);
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> (user <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>                    res.<span style=color:#a6e22e>setContentType</span>(<span style=color:#e6db74>&#34;application/json&#34;</span>);
+</span></span><span style=display:flex><span>                    res.<span style=color:#a6e22e>getWriter</span>().<span style=color:#a6e22e>write</span>(user);
+</span></span><span style=display:flex><span>                } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>                    res.<span style=color:#a6e22e>sendError</span>(HttpServletResponse.<span style=color:#a6e22e>SC_NOT_FOUND</span>);
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            req.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;error&#34;</span>, <span style=color:#e6db74>&#34;Error retrieving users: &#34;</span> <span style=color:#f92672>+</span> e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>view</span>(<span style=color:#e6db74>&#34;/WEB-INF/error.jsp&#34;</span>, req, res);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Other HTTP methods (doPost, doPut, doDelete) for CRUD operations...</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This servlet handles different types of requests:</p><ul><li>GET requests to <code>/users</code> list all users</li><li>GET requests to <code>/users/{id}</code> get a specific user</li><li>It also has methods for POST, PUT, and DELETE to create, update, and delete users</li></ul><p>The <code>Base</code> class provides common functionality for all servlets:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.crud;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.RequestDispatcher;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.ServletException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.http.HttpServlet;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.http.HttpServletRequest;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.servlet.http.HttpServletResponse;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.IOException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.PrintWriter;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.Serial;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Base</span> <span style=color:#66d9ef>extends</span> HttpServlet {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Serial</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>6662457240855069965L;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>view</span>(String page, HttpServletRequest req, HttpServletResponse res) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            res.<span style=color:#a6e22e>setContentType</span>(<span style=color:#e6db74>&#34;text/html; charset=utf-8&#34;</span>);
+</span></span><span style=display:flex><span>            req.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;page&#34;</span>, page);
+</span></span><span style=display:flex><span>            RequestDispatcher requestDispatcher <span style=color:#f92672>=</span> req.<span style=color:#a6e22e>getRequestDispatcher</span>(<span style=color:#e6db74>&#34;/WEB-INF/layout.jsp&#34;</span>);
+</span></span><span style=display:flex><span>            requestDispatcher.<span style=color:#a6e22e>forward</span>(req, res);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (IOException <span style=color:#f92672>|</span> ServletException e) {
+</span></span><span style=display:flex><span>            res.<span style=color:#a6e22e>setContentType</span>(<span style=color:#e6db74>&#34;text/html; charset=utf-8&#34;</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>try</span> (PrintWriter out <span style=color:#f92672>=</span> res.<span style=color:#a6e22e>getWriter</span>()) {
+</span></span><span style=display:flex><span>                out.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;&lt;html&gt;&lt;body&gt;&#34;</span>);
+</span></span><span style=display:flex><span>                out.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;&lt;pre&gt;&#34;</span>);
+</span></span><span style=display:flex><span>                out.<span style=color:#a6e22e>println</span>(e.<span style=color:#a6e22e>getLocalizedMessage</span>());
+</span></span><span style=display:flex><span>                out.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;&lt;/pre&gt;&#34;</span>);
+</span></span><span style=display:flex><span>                out.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;&lt;/body&gt;&lt;/html&gt;&#34;</span>);
+</span></span><span style=display:flex><span>            } <span style=color:#66d9ef>catch</span> (IOException ex1) {
+</span></span><span style=display:flex><span>                ex1.<span style=color:#a6e22e>printStackTrace</span>();
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The <code>view</code> method sets up a simple template system, forwarding requests to a layout JSP that includes the specific page content.</p><h2 id=6-jsp-javaserver-pages>6. JSP (JavaServer Pages)</h2><p>JSP (JavaServer Pages) is a technology that allows you to create dynamic web pages using HTML with embedded Java code. JSPs are compiled into servlets by the server, combining the ease of writing HTML with the power of Java.</p><p>Our application uses a simple template system with a layout JSP and content JSPs:</p><h3 id=layout-jsp>Layout JSP</h3><p>The <code>layout.jsp</code> file provides a common structure for all pages:</p><pre tabindex=0><code class=language-jsp data-lang=jsp>&lt;%@ taglib uri=&#34;jakarta.tags.core&#34;      prefix=&#34;c&#34;   %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.fmt&#34;       prefix=&#34;fmt&#34; %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.xml&#34;       prefix=&#34;x&#34;   %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.sql&#34;       prefix=&#34;sql&#34; %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.functions&#34; prefix=&#34;fn&#34;  %&gt;
+&lt;%@ page contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34;%&gt;
+&lt;c:import url=&#34;${page}&#34; var=&#34;importedPage&#34; /&gt;
+&lt;!doctype html&gt;
+&lt;html lang=&#34;pt-BR&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;utf-8&#34;&gt;
+    &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+    &lt;title&gt;&lt;c:out value=&#34;${title}&#34; /&gt;&lt;/title&gt;
+    &lt;!-- Latest compiled and minified CSS --&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css&#34; /&gt;
+    &lt;!-- Optional theme --&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css&#34; /&gt;
+    &lt;!-- Latest compiled and minified JavaScript --&gt;
+    &lt;script src=&#34;https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js&#34;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+${importedPage}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>This layout:</p><ol><li>Imports JSTL tag libraries for use in the JSP</li><li>Imports the specific page content using <code>&lt;c:import></code></li><li>Provides a common HTML structure with Bootstrap for styling</li><li>Inserts the imported page content into the body</li></ol><h3 id=content-jsp>Content JSP</h3><p>The <code>index.jsp</code> file is a simple content page:</p><pre tabindex=0><code class=language-jsp data-lang=jsp>&lt;%@ taglib uri=&#34;jakarta.tags.core&#34;      prefix=&#34;c&#34;   %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.fmt&#34;       prefix=&#34;fmt&#34; %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.xml&#34;       prefix=&#34;x&#34;   %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.sql&#34;       prefix=&#34;sql&#34; %&gt;
+&lt;%@ taglib uri=&#34;jakarta.tags.functions&#34; prefix=&#34;fn&#34;  %&gt;
+&lt;%@ page contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34;%&gt;
+&lt;c:set var=&#34;title&#34; scope=&#34;request&#34; value=&#34;Cadastrar&#34;/&gt;
+
+&lt;h3&gt;&lt;c:out value=&#34;${someVariable}&#34; /&gt;&lt;/h3&gt;
+
+&lt;c:forEach var=&#34;li&#34; items=&#34;${someList}&#34;&gt;
+        &lt;p&gt;&lt;c:out value=&#34;${li}&#34; /&gt;&lt;/p&gt;
+&lt;/c:forEach&gt;  
+</code></pre><p>This JSP:</p><ol><li>Sets a title for the page</li><li>Displays a variable value</li><li>Iterates through a list and displays each item</li></ol><p>For more complex pages, like the users page, we use more JSTL features:</p><pre tabindex=0><code class=language-jsp data-lang=jsp>&lt;%@ page contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34;%&gt;
+&lt;%@ taglib uri=&#34;http://java.sun.com/jsp/jstl/core&#34; prefix=&#34;c&#34; %&gt;
+
+&lt;div class=&#34;container&#34;&gt;
+    
+    &lt;c:if test=&#34;${not empty error}&#34;&gt;
+        &lt;div class=&#34;alert alert-danger&#34;&gt;
+            ${error}
+        &lt;/div&gt;
+    &lt;/c:if&gt;
+    
+    &lt;div class=&#34;row mb-4&#34;&gt;
+        &lt;div class=&#34;col&#34;&gt;
+            &lt;div class=&#34;card&#34;&gt;
+                &lt;div class=&#34;card-header&#34;&gt;
+                    &lt;h2&gt;User List&lt;/h2&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;card-body&#34;&gt;
+                    &lt;c:choose&gt;
+                        &lt;c:when test=&#34;${empty users}&#34;&gt;
+                            &lt;p&gt;No users found.&lt;/p&gt;
+                        &lt;/c:when&gt;
+                        &lt;c:otherwise&gt;
+                            &lt;ul class=&#34;list-group&#34;&gt;
+                                &lt;c:forEach var=&#34;user&#34; items=&#34;${users}&#34;&gt;
+                                    &lt;li class=&#34;list-group-item&#34;&gt;${user}&lt;/li&gt;
+                                &lt;/c:forEach&gt;
+                            &lt;/ul&gt;
+                        &lt;/c:otherwise&gt;
+                    &lt;/c:choose&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&#34;row&#34;&gt;
+        &lt;div class=&#34;col&#34;&gt;
+            &lt;div class=&#34;card&#34;&gt;
+                &lt;div class=&#34;card-header&#34;&gt;
+                    &lt;h2&gt;Add New User&lt;/h2&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;card-body&#34;&gt;
+                    &lt;form action=&#34;${pageContext.request.contextPath}/users&#34; method=&#34;post&#34;&gt;
+                        &lt;div class=&#34;form-group mb-3&#34;&gt;
+                            &lt;label for=&#34;username&#34;&gt;Username:&lt;/label&gt;
+                            &lt;input type=&#34;text&#34; class=&#34;form-control&#34; id=&#34;username&#34; name=&#34;username&#34; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&#34;form-group mb-3&#34;&gt;
+                            &lt;label for=&#34;email&#34;&gt;Email:&lt;/label&gt;
+                            &lt;input type=&#34;email&#34; class=&#34;form-control&#34; id=&#34;email&#34; name=&#34;email&#34; required&gt;
+                        &lt;/div&gt;
+                        &lt;button type=&#34;submit&#34; class=&#34;btn btn-primary&#34;&gt;Add User&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>This JSP:</p><ol><li>Displays an error message if one exists</li><li>Shows a list of users or a &ldquo;No users found&rdquo; message</li><li>Provides a form for adding new users</li></ol><p>JSTL (JSP Standard Tag Library) provides tags for common tasks like conditionals (<code>&lt;c:if></code>, <code>&lt;c:choose></code>), loops (<code>&lt;c:forEach></code>), and output (<code>&lt;c:out></code>), making it easier to write dynamic content without embedding Java code directly.</p><h2 id=7-database-data-retriever-and-transactions>7. Database, Data Retriever and Transactions</h2><p>Our application uses JDBC (Java Database Connectivity) to interact with a PostgreSQL database. Let&rsquo;s explore how database connections are managed and how data is retrieved and modified.</p><h3 id=database-configuration>Database Configuration</h3><p>The <code>DatabaseConfig</code> class manages database connections using JNDI (Java Naming and Directory Interface):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.crud.db;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.naming.Context;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.naming.InitialContext;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.naming.NamingException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.sql.DataSource;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.IOException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.net.URISyntaxException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.net.URL;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.sql.Connection;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.sql.PreparedStatement;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.sql.ResultSet;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.sql.SQLException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.nio.file.Files;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.nio.file.Path;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.Objects;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Database configuration class that provides a DataSource for connecting to PostgreSQL.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Uses JNDI to lookup the DataSource configured in Tomcat.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DatabaseConfig</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> DataSource dataSource;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> String JNDI_NAME <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;java:comp/env/jdbc/PostgresDB&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>static</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            initDataSource();
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Failed to lookup JNDI DataSource&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initDataSource</span>() <span style=color:#66d9ef>throws</span> NamingException, SQLException {
+</span></span><span style=display:flex><span>        Context initContext <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> InitialContext();
+</span></span><span style=display:flex><span>        dataSource <span style=color:#f92672>=</span> (DataSource) initContext.<span style=color:#a6e22e>lookup</span>(JNDI_NAME);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (dataSource <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> NamingException(<span style=color:#e6db74>&#34;Could not find JNDI DataSource: &#34;</span> <span style=color:#f92672>+</span> JNDI_NAME);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>isDatabaseIsInit(dataSource.<span style=color:#a6e22e>getConnection</span>())) {
+</span></span><span style=display:flex><span>            initDatabase(dataSource.<span style=color:#a6e22e>getConnection</span>());
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isDatabaseIsInit</span>(Connection conn) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> (PreparedStatement stmt <span style=color:#f92672>=</span> conn.<span style=color:#a6e22e>prepareStatement</span>(<span style=color:#e6db74>&#34;SELECT count(*) as c FROM users WHERE 1 =  1&#34;</span>)) {
+</span></span><span style=display:flex><span>            ResultSet rs <span style=color:#f92672>=</span> stmt.<span style=color:#a6e22e>executeQuery</span>();
+</span></span><span style=display:flex><span>            rs.<span style=color:#a6e22e>next</span>();
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>int</span> count <span style=color:#f92672>=</span> rs.<span style=color:#a6e22e>getInt</span>(<span style=color:#e6db74>&#34;c&#34;</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> count <span style=color:#f92672>&gt;=</span> 0;
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (SQLException e) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initDatabase</span>(Connection conn){
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            URL resource <span style=color:#f92672>=</span> DatabaseConfig.<span style=color:#a6e22e>class</span>.<span style=color:#a6e22e>getClassLoader</span>().<span style=color:#a6e22e>getResource</span>(<span style=color:#e6db74>&#34;db/init.sql&#34;</span>);
+</span></span><span style=display:flex><span>            Path path <span style=color:#f92672>=</span> Path.<span style=color:#a6e22e>of</span>(Objects.<span style=color:#a6e22e>requireNonNull</span>(resource).<span style=color:#a6e22e>toURI</span>());
+</span></span><span style=display:flex><span>            String sqlScript <span style=color:#f92672>=</span> Files.<span style=color:#a6e22e>readString</span>(path);
+</span></span><span style=display:flex><span>            conn.<span style=color:#a6e22e>prepareStatement</span>(sqlScript).<span style=color:#a6e22e>execute</span>();
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (SQLException <span style=color:#f92672>|</span> URISyntaxException <span style=color:#f92672>|</span> IOException e) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Get the configured DataSource
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @return DataSource instance
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> DataSource <span style=color:#a6e22e>getDataSource</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dataSource;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Get a database connection from the pool
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @return Connection object
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @throws SQLException if a database access error occurs
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Connection <span style=color:#a6e22e>getConnection</span>() <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dataSource.<span style=color:#a6e22e>getConnection</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Close the data source and its connections
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Note: With JNDI, the container manages the DataSource lifecycle,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * so this method is now a no-op.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>closeDataSource</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// No need to close JNDI DataSource as it&#39;s managed by the container</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This class:</p><ol><li>Looks up a DataSource from JNDI (Java Naming and Directory Interface)</li><li>Initializes the database if needed using an SQL script</li><li>Provides methods to get connections from the connection pool</li></ol><h3 id=database-connection-methods>Database Connection Methods</h3><p>There are several ways to create or acquire database connections in a Java web application:</p><ol><li><p><strong>JNDI DataSource (as used in our project)</strong>:</p><ul><li>The application server (like Tomcat) manages the connection pool</li><li>The application looks up the DataSource using JNDI</li><li>Advantages: Connection pooling is handled by the server, configuration is separate from code</li></ul></li><li><p><strong>Direct JDBC Connection</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>Connection conn <span style=color:#f92672>=</span> DriverManager.<span style=color:#a6e22e>getConnection</span>(<span style=color:#e6db74>&#34;jdbc:postgresql://localhost:5432/dbname&#34;</span>, <span style=color:#e6db74>&#34;username&#34;</span>, <span style=color:#e6db74>&#34;password&#34;</span>);
+</span></span></code></pre></div><ul><li>Advantages: Simple, no dependencies</li><li>Disadvantages: No connection pooling, credentials in code</li></ul></li><li><p><strong>Connection Pool Library (like HikariCP)</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>HikariConfig config <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HikariConfig();
+</span></span><span style=display:flex><span>config.<span style=color:#a6e22e>setJdbcUrl</span>(<span style=color:#e6db74>&#34;jdbc:postgresql://localhost:5432/dbname&#34;</span>);
+</span></span><span style=display:flex><span>config.<span style=color:#a6e22e>setUsername</span>(<span style=color:#e6db74>&#34;username&#34;</span>);
+</span></span><span style=display:flex><span>config.<span style=color:#a6e22e>setPassword</span>(<span style=color:#e6db74>&#34;password&#34;</span>);
+</span></span><span style=display:flex><span>HikariDataSource dataSource <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HikariDataSource(config);
+</span></span><span style=display:flex><span>Connection conn <span style=color:#f92672>=</span> dataSource.<span style=color:#a6e22e>getConnection</span>();
+</span></span></code></pre></div><ul><li>Advantages: Efficient connection pooling, configurable</li><li>Disadvantages: Additional dependency</li></ul></li><li><p><strong>JPA/Hibernate</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>EntityManagerFactory emf <span style=color:#f92672>=</span> Persistence.<span style=color:#a6e22e>createEntityManagerFactory</span>(<span style=color:#e6db74>&#34;myPU&#34;</span>);
+</span></span><span style=display:flex><span>EntityManager em <span style=color:#f92672>=</span> emf.<span style=color:#a6e22e>createEntityManager</span>();
+</span></span><span style=display:flex><span><span style=color:#75715e>// Use EntityManager for database operations</span>
+</span></span></code></pre></div><ul><li>Advantages: Object-relational mapping, less SQL code</li><li>Disadvantages: More complex, additional dependencies</li></ul></li></ol><h3 id=contextxml-configuration>context.xml Configuration</h3><p>While our project doesn&rsquo;t include a <code>context.xml</code> file, it&rsquo;s an important file for configuring JNDI resources in Tomcat. Here&rsquo;s an example of what it would look like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;Context&gt;</span>
+</span></span><span style=display:flex><span>   <span style=color:#f92672>&lt;Resource</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;jdbc/PostgresDB&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>auth=</span><span style=color:#e6db74>&#34;Container&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;javax.sql.DataSource&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>driverClassName=</span><span style=color:#e6db74>&#34;org.postgresql.Driver&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>url=</span><span style=color:#e6db74>&#34;jdbc:postgresql://localhost:5432/your_database_name&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>username=</span><span style=color:#e6db74>&#34;your_username&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>password=</span><span style=color:#e6db74>&#34;your_password&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>maxTotal=</span><span style=color:#e6db74>&#34;20&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>maxIdle=</span><span style=color:#e6db74>&#34;10&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:#a6e22e>maxWaitMillis=</span><span style=color:#e6db74>&#34;-1&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/Context&gt;</span>
+</span></span></code></pre></div><p>This file would typically be placed in:</p><ul><li><code>META-INF/context.xml</code> inside your WAR file</li><li><code>conf/[enginename]/[hostname]/[webappname].xml</code> in your Tomcat installation</li></ul><h3 id=data-access-object-dao>Data Access Object (DAO)</h3><p>The <code>UserDAO</code> class handles database operations for users:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.crud.db;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.sql.*;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.ArrayList;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.List;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UserDAO</span> {
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>getAllUsers</span>() <span style=color:#66d9ef>throws</span> Exception {
+</span></span><span style=display:flex><span>        List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> users <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> (Connection conn <span style=color:#f92672>=</span> DatabaseConfig.<span style=color:#a6e22e>getConnection</span>();
+</span></span><span style=display:flex><span>             PreparedStatement stmt <span style=color:#f92672>=</span> conn.<span style=color:#a6e22e>prepareStatement</span>(<span style=color:#e6db74>&#34;SELECT * FROM users&#34;</span>);
+</span></span><span style=display:flex><span>             ResultSet rs <span style=color:#f92672>=</span> stmt.<span style=color:#a6e22e>executeQuery</span>()) {
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>while</span> (rs.<span style=color:#a6e22e>next</span>()) {
+</span></span><span style=display:flex><span>                users.<span style=color:#a6e22e>add</span>(String.<span style=color:#a6e22e>format</span>(<span style=color:#e6db74>&#34;{\&#34;id\&#34;:\&#34;%s\&#34;,\&#34;username\&#34;:\&#34;%s\&#34;,\&#34;email\&#34;:\&#34;%s\&#34;}&#34;</span>,
+</span></span><span style=display:flex><span>                    rs.<span style=color:#a6e22e>getString</span>(<span style=color:#e6db74>&#34;id&#34;</span>),
+</span></span><span style=display:flex><span>                    rs.<span style=color:#a6e22e>getString</span>(<span style=color:#e6db74>&#34;username&#34;</span>),
+</span></span><span style=display:flex><span>                    rs.<span style=color:#a6e22e>getString</span>(<span style=color:#e6db74>&#34;email&#34;</span>)));
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> users;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Other CRUD methods...</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This class:</p><ol><li>Gets a connection from the connection pool</li><li>Executes SQL queries using prepared statements</li><li>Processes the results and returns them</li><li>Uses try-with-resources to ensure connections are properly closed</li></ol><h3 id=database-initialization>Database Initialization</h3><p>The <code>init.sql</code> file contains SQL statements to create tables and insert initial data:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#75715e>-- Database initialization script
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>-- Create users table
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> <span style=color:#66d9ef>IF</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>EXISTS</span> users (
+</span></span><span style=display:flex><span>                                    id SERIAL <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
+</span></span><span style=display:flex><span>                                    username VARCHAR(<span style=color:#ae81ff>50</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> <span style=color:#66d9ef>UNIQUE</span>,
+</span></span><span style=display:flex><span>   email VARCHAR(<span style=color:#ae81ff>100</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
+</span></span><span style=display:flex><span>   created_at <span style=color:#66d9ef>TIMESTAMP</span> <span style=color:#66d9ef>DEFAULT</span> <span style=color:#66d9ef>CURRENT_TIMESTAMP</span>
+</span></span><span style=display:flex><span>   );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>-- Insert some sample data
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> users (username, email) <span style=color:#66d9ef>VALUES</span>
+</span></span><span style=display:flex><span>                                       (<span style=color:#e6db74>&#39;john_doe&#39;</span>, <span style=color:#e6db74>&#39;john@example.com&#39;</span>),
+</span></span><span style=display:flex><span>                                       (<span style=color:#e6db74>&#39;jane_smith&#39;</span>, <span style=color:#e6db74>&#39;jane@example.com&#39;</span>),
+</span></span><span style=display:flex><span>                                       (<span style=color:#e6db74>&#39;bob_johnson&#39;</span>, <span style=color:#e6db74>&#39;bob@example.com&#39;</span>)
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>ON</span> CONFLICT (username) <span style=color:#66d9ef>DO</span> <span style=color:#66d9ef>NOTHING</span>;
+</span></span></code></pre></div><p>This script:</p><ol><li>Creates a users table if it doesn&rsquo;t exist</li><li>Inserts sample data, skipping duplicates</li></ol><h2 id=8-running>8. Running</h2><p>To run the application, you need to:</p><ol><li><p><strong>Build the WAR file</strong>:</p><pre tabindex=0><code>./gradlew clean war
+</code></pre></li><li><p><strong>Deploy to Tomcat</strong>:</p><ul><li>Copy the WAR file from <code>build/libs/servlet-jsp-1.0.war</code> to Tomcat&rsquo;s <code>webapps</code> directory</li><li>Start Tomcat: <code>bin/startup.sh</code> (Linux/Mac) or <code>bin\startup.bat</code> (Windows)</li></ul></li><li><p><strong>Access the application</strong>:</p><ul><li>Open a browser and go to <code>http://localhost:8080/servlet-jsp/</code></li><li>To see the user list, go to <code>http://localhost:8080/servlet-jsp/users</code></li></ul></li><li><p><strong>Docker for PostgreSQL</strong> (optional):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>docker run --name postgres-db -e POSTGRES_PASSWORD<span style=color:#f92672>=</span>postgres -p 5432:5432 -d postgres:latest
+</span></span></code></pre></div></li></ol><h2 id=9-conclusions>9. Conclusions</h2><h3 id=pros-of-understanding-traditional-java-web-development>Pros of Understanding Traditional Java Web Development</h3><ol><li><p><strong>Foundational Knowledge</strong>: Understanding servlets, JSP, and JDBC gives you a solid foundation for learning any Java web framework.</p></li><li><p><strong>Control</strong>: You have direct control over every aspect of your application, from request handling to database access.</p></li><li><p><strong>Lightweight</strong>: Without the overhead of frameworks, your application can be more lightweight and have fewer dependencies.</p></li><li><p><strong>Debugging</strong>: When issues arise, it&rsquo;s easier to understand what&rsquo;s happening because you built the entire stack.</p></li><li><p><strong>Portability</strong>: Servlet-based applications can run on any Jakarta EE-compliant server.</p></li></ol><h3 id=cons-and-complexity-challenges>Cons and Complexity Challenges</h3><ol><li><p><strong>Boilerplate Code</strong>: You need to write a lot of repetitive code for common tasks.</p></li><li><p><strong>Manual Configuration</strong>: Configuration is manual and can be error-prone.</p></li><li><p><strong>No Convention over Configuration</strong>: Unlike modern frameworks, there are no defaults to speed up development.</p></li><li><p><strong>Limited Tooling</strong>: Fewer development tools and utilities compared to popular frameworks.</p></li><li><p><strong>Maintenance Burden</strong>: More code means more maintenance.</p></li></ol><p>Modern frameworks like Spring, Jakarta EE with CDI, Quarkus, or Micronaut solve many of these problems by providing:</p><ul><li>Dependency injection</li><li>Aspect-oriented programming</li><li>Convention over configuration</li><li>Rich ecosystems of libraries and tools</li></ul><p>However, understanding how these frameworks work &ldquo;under the hood&rdquo; by learning the basics of servlets, JSP, and JDBC will make you a more effective Java developer, regardless of which framework you ultimately use.</p><script type=text/javascript class=encharge-form-embed-script src=https://resources-app.encharge.io/embed-production.min.js></script>aaa<div class=encharge-form-embed data-encharge-form-id=7a41a67c-6379-4aba-87d4-c5dd58d1ca81>bbbb</div><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//brunoozendo.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></article><hr><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a href=mailto:bruno@brunorozendo.com><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/brunorozendo><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="copyright text-muted">Code released under the Apache 2.0 license.</p></div></div></div></footer><script src=https://brunorozendo.com//js/jquery.min.js></script><script src=https://brunorozendo.com//js/bootstrap.min.js></script><script src=https://brunorozendo.com//js/clean-blog.js></script></body></html>

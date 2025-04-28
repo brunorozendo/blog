@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bruno Rozendo</title><link>https://brunorozendo.com/</link><description>Recent content on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>https://brunorozendo.com/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bruno Rozendo</title><link>https://brunorozendo.com/</link><description>Recent content on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Java web without frameworks</title><link>https://brunorozendo.com/post/java-web-without-framworks.html</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/java-web-without-framworks.html</guid><description>&lt;h1 id="java-web-before-all-the-frameworks">Java Web, Before All the Frameworks&lt;/h1>
+&lt;p>This blog post is designed for new developers who are just starting their journey in web development with Java. We&amp;rsquo;ll explore how to build a web application using Jakarta EE (formerly Java EE) without relying on modern frameworks like Spring or Quarkus. Understanding these fundamentals will give you a solid foundation for working with any Java web technology.&lt;/p>
+&lt;h2 id="1-project-creation">1. Project Creation&lt;/h2>
+&lt;p>Creating a Java web application starts with setting up a project structure. In this example, we&amp;rsquo;re using Gradle as our build tool, but you could also use Maven or even a simple directory structure.&lt;/p></description></item><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>https://brunorozendo.com/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped">
  &lt;thead>
  &lt;tr>
  &lt;th>rev.&lt;/th>
@@ -130,7 +133,7 @@ como &lt;a href="https://xfce.org/">XFCE&lt;/a>, &lt;a href="https://mate-deskto
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bruno@ubuntu:~$&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 
-&lt;p>Agora basta adicionar no &lt;code>$PATH&lt;/code> so sistema opercional.&lt;/p></description></item><item><title>Calcular π (pi)</title><link>https://brunorozendo.com/post/calcular-pi.html</link><pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/calcular-pi.html</guid><description>&lt;p>Seja a fórmula matemática para calcular Pi (&lt;!-- raw HTML omitted -->Π|π&lt;!-- raw HTML omitted -->)&lt;/p>
+&lt;p>Agora basta adicionar no &lt;code>$PATH&lt;/code> so sistema opercional.&lt;/p></description></item><item><title>Calcular π (pi)</title><link>https://brunorozendo.com/post/calcular-pi.html</link><pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/calcular-pi.html</guid><description>&lt;p>Seja a fórmula matemática para calcular Pi (&lt;span class="MJXc-TeX-math-I">Π|π&lt;/span>)&lt;/p>
 
 &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
  &lt;mi>&amp;pi;&lt;/mi>
@@ -264,8 +267,7 @@ como &lt;a href="https://xfce.org/">XFCE&lt;/a>, &lt;a href="https://mate-deskto
 &lt;p>Caso a sua saida tenha sido algo parecido com:&lt;/p></description></item><item><title>Error could not open dev vmmon</title><link>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</guid><description>&lt;p>O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.&lt;/p>
 &lt;blockquote>
 &lt;p>Could not open /dev/vmmon: No such file or directory.
-Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p>
-&lt;/blockquote>
+Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p>&lt;/blockquote>
 &lt;p>Esse erro aparece em *unix mas para resolve-lo é fácil.&lt;/p>
 &lt;div class="terminal">
  &lt;div class="header">
