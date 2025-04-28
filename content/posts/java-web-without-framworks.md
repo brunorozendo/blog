@@ -748,6 +748,3 @@ Modern frameworks like Spring, Jakarta EE with CDI, Quarkus, or Micronaut solve 
 - Rich ecosystems of libraries and tools
 
 However, understanding how these frameworks work "under the hood" by learning the basics of servlets, JSP, and JDBC will make you a more effective Java developer, regardless of which framework you ultimately use.
-
-
-<script type="text/javascript" class="encharge-form-embed-script" src="https://resources-app.encharge.io/embed-production.min.js"></script> aaa<div class="encharge-form-embed" data-encharge-form-id="7a41a67c-6379-4aba-87d4-c5dd58d1ca81" >bbbb</div>
