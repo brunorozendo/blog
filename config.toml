@@ -1,7 +1,6 @@
 baseurl = "https://brunorozendo.com"
 title = "Bruno Rozendo"
 canonifyurls = true
-paginate = 10
 theme = "startbootstrap-clean-blog"
 languageCode = "pt-BR"
 copyright = "Code released under the Apache 2.0 license."
@@ -38,3 +37,8 @@ googleAnalytics = "UA-86914466-1"
 
 [permalinks]
   posts = "/post/:filename"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
