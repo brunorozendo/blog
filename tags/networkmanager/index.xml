@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networkmanager on Bruno Rozendo</title><link>https://brunorozendo.com/tags/networkmanager.html</link><description>Recent content in Networkmanager on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/networkmanager/index.xml" rel="self" type="application/rss+xml"/><item><title>archlinux wifi</title><link>https://brunorozendo.com/post/archlinux-wifi.html</link><pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/archlinux-wifi.html</guid><description>&lt;p>O método apresentado aqui server para Desktop Envirement tais como Unity, XFCE, LXDE,&amp;hellip;&lt;/p>
-&lt;p>Nós vamos usa o NetworkManager. Este que é usando em quase todas as distros linux.&lt;/p>
-&lt;p>Vamos tomar como ponto de partida o momento em que se instala o Arch Linux e que se tem uma conexão com a internet.&lt;/p>
-&lt;p>Caso esse não seja o seu caso digite no terminal :&lt;/p>
-&lt;div class="terminal">
- &lt;div class="header">
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt="">
- &lt;div class="title">Terminal&lt;/div>
- &lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>root@archlinux ~# ping -c4 google.com&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networkmanager on Bruno Rozendo</title><link>https://brunorozendo.com/tags/networkmanager.html</link><description>Recent content in Networkmanager on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/networkmanager/index.xml" rel="self" type="application/rss+xml"/><item><title>archlinux wifi</title><link>https://brunorozendo.com/post/archlinux-wifi.html</link><pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/archlinux-wifi.html</guid><description>&lt;p&gt;O método apresentado aqui server para Desktop Envirement tais como Unity, XFCE, LXDE,&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Nós vamos usa o NetworkManager. Este que é usando em quase todas as distros linux.&lt;/p&gt;
+&lt;p&gt;Vamos tomar como ponto de partida o momento em que se instala o Arch Linux e que se tem uma conexão com a internet.&lt;/p&gt;
+&lt;p&gt;Caso esse não seja o seu caso digite no terminal :&lt;/p&gt;
+&lt;div class="terminal"&gt;
+ &lt;div class="header"&gt;
+ &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;div class="title"&gt;Terminal&lt;/div&gt;
+ &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;root@archlinux ~# ping -c4 google.com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;p>Caso a sua saida tenha sido algo parecido com:&lt;/p></description></item></channel></rss>
+&lt;p&gt;Caso a sua saida tenha sido algo parecido com:&lt;/p&gt;</description></item></channel></rss>
