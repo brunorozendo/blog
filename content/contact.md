@@ -42,7 +42,12 @@ image: "/images/posts/archlinux-wifi.svg"
 </svg>
 
 </svg>
+
 </div>
+
+
+
+
   <script
   type="text/javascript"
   class="encharge-form-embed-script"
