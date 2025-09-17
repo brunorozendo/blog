@@ -264,7 +264,15 @@ como &lt;a href="https://xfce.org/"&gt;XFCE&lt;/a&gt;, &lt;a href="https://mate-
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;root@archlinux ~# ping -c4 google.com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Caso a sua saida tenha sido algo parecido com:&lt;/p&gt;</description></item><item><title>Error could not open dev vmmon</title><link>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</guid><description>&lt;p&gt;O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.&lt;/p&gt;
+&lt;p&gt;Caso a sua saida tenha sido algo parecido com:&lt;/p&gt;</description></item><item><title>Contact</title><link>https://brunorozendo.com/contact.html</link><pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/contact.html</guid><description>&lt;script
+ type="text/javascript"
+ class="encharge-form-embed-script"
+ src="https://resources-app.encharge.io/embed-production.min.js"
+&gt;&lt;/script&gt;
+&lt;div 
+ class="encharge-form-embed" 
+ data-encharge-form-id="a903df75-1078-4543-9f52-65bedf5592c4"
+&gt;&lt;/div&gt;</description></item><item><title>Error could not open dev vmmon</title><link>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</guid><description>&lt;p&gt;O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Could not open /dev/vmmon: No such file or directory.
 Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p&gt;&lt;/blockquote&gt;
