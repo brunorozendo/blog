@@ -1,12 +1,15 @@
-+++
-date = "2015-05-24T18:52:04+02:00"
-menu = "main"
-title = "Contact"
-type = "about"
-weight = -170
-draft = true
-+++
 
+---
+title: "Contact"
+description: ""
+author:
+  name: "Bruno Rozendo"
+date: 2015-04-15
+tags:
+comments: true
+imageCredit: "<a href='http://www.freepik.com'>Designed by Freepik</a>"
+image: "/images/posts/archlinux-wifi.svg"
+---
 
 
   <script
