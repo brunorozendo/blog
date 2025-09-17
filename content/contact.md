@@ -10,6 +10,7 @@ comments: true
 imageCredit: "<a href='http://www.freepik.com'>Designed by Freepik</a>"
 image: "/images/posts/archlinux-wifi.svg"
 ---
+<div style="width:500px">
 
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
@@ -41,7 +42,7 @@ image: "/images/posts/archlinux-wifi.svg"
 </svg>
 
 </svg>
-
+</div>
   <script
   type="text/javascript"
   class="encharge-form-embed-script"
