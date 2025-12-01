@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android on Bruno Rozendo</title><link>https://brunorozendo.com/tags/android.html</link><description>Recent content in Android on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/tags/android/index.xml" rel="self" type="application/rss+xml"/><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>https://brunorozendo.com/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android on Bruno Rozendo</title><link>/tags/android.html</link><description>Recent content in Android on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml"/><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;rev.&lt;/th&gt;
@@ -19,7 +19,7 @@
 
 
 &lt;h4 id="prequisitos"&gt;Prequisitos&lt;/h4&gt;
-&lt;p&gt;Ter o &lt;a href="https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html"&gt;android sdk instalado&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ter o &lt;a href="/post/instalar-adroid-sdk-gnu-linux.html"&gt;android sdk instalado&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id="1-criar-avd"&gt;1. Criar avd&lt;/h4&gt;
 &lt;p&gt;Uma vez que que já tenha instalado o sdk tudo fica bem mais fácil.&lt;/p&gt;
 &lt;p&gt;Supondo que queremos rodar uma versão do &lt;code&gt;Android 5.0 (Lollipop)&lt;/code&gt; abra o terminal e vamos instalar os seguites pacotes:&lt;/p&gt;
@@ -32,7 +32,7 @@
 &lt;p&gt;No terminal&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sdkmanager &lt;span style="color:#e6db74"&gt;&amp;#34;platforms;android-22&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[=======================================]&lt;/span&gt; 100% Computing updates...
@@ -43,7 +43,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sdkmanager &lt;span style="color:#e6db74"&gt;&amp;#34;platform-tools&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[=======================================]&lt;/span&gt; 100% Unzipping... platform-tools/systr&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;** Caso queira ver todas as opções possiveis digite no terminal&lt;/p&gt;</description></item><item><title>Como Instalar o Android SDK no Gnu/Linux</title><link>https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
+&lt;p&gt;** Caso queira ver todas as opções possiveis digite no terminal&lt;/p&gt;</description></item><item><title>Como Instalar o Android SDK no Gnu/Linux</title><link>/post/instalar-adroid-sdk-gnu-linux.html</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>/post/instalar-adroid-sdk-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;rev.&lt;/th&gt;
@@ -78,21 +78,21 @@
 2.1. &lt;strong&gt;Ubuntu 64&lt;/strong&gt;:
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 2.2. &lt;strong&gt;Fedora 64&lt;/strong&gt;:
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="1-download-do-command-tools"&gt;1. Download do &lt;code&gt;command-tools&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Vá em &lt;a href="https://developer.android.com/studio#command-tools"&gt;Android Studio &amp;gt; Downloads &amp;gt; Command line tools only &amp;gt; commandlinetools-linux-XXXXXXXXXXX.zip&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Espere a página carregar, clique em &amp;ldquo;I have read and agree with the above terms and conditions&amp;rdquo; (aceitar) e faça o download.&lt;/p&gt;</description></item><item><title>Instalando Gradle No Gnu/Linux</title><link>https://brunorozendo.com/post/instalando-gradle-no-gnu-linux.html</link><pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/instalando-gradle-no-gnu-linux.html</guid><description>&lt;p&gt;Gradle é uma poderosa ferramenta para o gerenciamento de build e dependências em java(e capaz de se extender para outras linguagens)&lt;/p&gt;
+&lt;p&gt;Espere a página carregar, clique em &amp;ldquo;I have read and agree with the above terms and conditions&amp;rdquo; (aceitar) e faça o download.&lt;/p&gt;</description></item><item><title>Instalando Gradle No Gnu/Linux</title><link>/post/instalando-gradle-no-gnu-linux.html</link><pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate><guid>/post/instalando-gradle-no-gnu-linux.html</guid><description>&lt;p&gt;Gradle é uma poderosa ferramenta para o gerenciamento de build e dependências em java(e capaz de se extender para outras linguagens)&lt;/p&gt;
 &lt;h4 id="0-prerequisitos"&gt;0. Prerequisitos&lt;/h4&gt;
 &lt;p&gt;Ter o java 8 instalado&lt;/p&gt;
 &lt;h4 id="1-dowload-do-gradle"&gt;1. Dowload do gradle&lt;/h4&gt;
@@ -100,7 +100,7 @@
 &lt;p&gt;Depois disso escolha uma pasta do no seu computador para descompactar, no meu caso será &lt;code&gt;/opt/gradle&lt;/code&gt;&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;bruno@ubuntu:~$ ls /opt/gradle/
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gradle-4.0.2-all.zip gradle-4.0.2 

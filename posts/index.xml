@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Bruno Rozendo</title><link>https://brunorozendo.com/posts/index.html</link><description>Recent content in Posts on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://brunorozendo.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Java web without frameworks</title><link>https://brunorozendo.com/post/java-web-without-framworks.html</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/java-web-without-framworks.html</guid><description>&lt;h1 id="java-web-before-all-the-frameworks"&gt;Java Web, Before All the Frameworks&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Bruno Rozendo</title><link>/posts/index.html</link><description>Recent content in Posts on Bruno Rozendo</description><generator>Hugo</generator><language>pt-BR</language><copyright>Code released under the Apache 2.0 license.</copyright><lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Java web without frameworks</title><link>/post/java-web-without-framworks.html</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>/post/java-web-without-framworks.html</guid><description>&lt;h1 id="java-web-before-all-the-frameworks"&gt;Java Web, Before All the Frameworks&lt;/h1&gt;
 &lt;p&gt;This blog post is designed for new developers who are just starting their journey in web development with Java. We&amp;rsquo;ll explore how to build a web application using Jakarta EE (formerly Java EE) without relying on modern frameworks like Spring or Quarkus. Understanding these fundamentals will give you a solid foundation for working with any Java web technology.&lt;/p&gt;
 &lt;h2 id="1-project-creation"&gt;1. Project Creation&lt;/h2&gt;
-&lt;p&gt;Creating a Java web application starts with setting up a project structure. In this example, we&amp;rsquo;re using Gradle as our build tool, but you could also use Maven or even a simple directory structure.&lt;/p&gt;</description></item><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>https://brunorozendo.com/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
+&lt;p&gt;Creating a Java web application starts with setting up a project structure. In this example, we&amp;rsquo;re using Gradle as our build tool, but you could also use Maven or even a simple directory structure.&lt;/p&gt;</description></item><item><title>Criar AVD (Simulador Android) por linha de comando no Gnu/Linux</title><link>/post/criar-avd-gnu-linux.html</link><pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate><guid>/post/criar-avd-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;rev.&lt;/th&gt;
@@ -22,7 +22,7 @@
 
 
 &lt;h4 id="prequisitos"&gt;Prequisitos&lt;/h4&gt;
-&lt;p&gt;Ter o &lt;a href="https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html"&gt;android sdk instalado&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ter o &lt;a href="/post/instalar-adroid-sdk-gnu-linux.html"&gt;android sdk instalado&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id="1-criar-avd"&gt;1. Criar avd&lt;/h4&gt;
 &lt;p&gt;Uma vez que que já tenha instalado o sdk tudo fica bem mais fácil.&lt;/p&gt;
 &lt;p&gt;Supondo que queremos rodar uma versão do &lt;code&gt;Android 5.0 (Lollipop)&lt;/code&gt; abra o terminal e vamos instalar os seguites pacotes:&lt;/p&gt;
@@ -35,7 +35,7 @@
 &lt;p&gt;No terminal&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sdkmanager &lt;span style="color:#e6db74"&gt;&amp;#34;platforms;android-22&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[=======================================]&lt;/span&gt; 100% Computing updates...
@@ -46,7 +46,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sdkmanager &lt;span style="color:#e6db74"&gt;&amp;#34;platform-tools&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[=======================================]&lt;/span&gt; 100% Unzipping... platform-tools/systr&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;** Caso queira ver todas as opções possiveis digite no terminal&lt;/p&gt;</description></item><item><title>Como Instalar o Android SDK no Gnu/Linux</title><link>https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/instalar-adroid-sdk-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
+&lt;p&gt;** Caso queira ver todas as opções possiveis digite no terminal&lt;/p&gt;</description></item><item><title>Como Instalar o Android SDK no Gnu/Linux</title><link>/post/instalar-adroid-sdk-gnu-linux.html</link><pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate><guid>/post/instalar-adroid-sdk-gnu-linux.html</guid><description>&lt;table class="table table-striped"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;rev.&lt;/th&gt;
@@ -81,21 +81,21 @@
 2.1. &lt;strong&gt;Ubuntu 64&lt;/strong&gt;:
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 2.2. &lt;strong&gt;Fedora 64&lt;/strong&gt;:
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo dnf install zlib.i686 ncurses-libs.i686 bzip2-libs.i686&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="1-download-do-command-tools"&gt;1. Download do &lt;code&gt;command-tools&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Vá em &lt;a href="https://developer.android.com/studio#command-tools"&gt;Android Studio &amp;gt; Downloads &amp;gt; Command line tools only &amp;gt; commandlinetools-linux-XXXXXXXXXXX.zip&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Espere a página carregar, clique em &amp;ldquo;I have read and agree with the above terms and conditions&amp;rdquo; (aceitar) e faça o download.&lt;/p&gt;</description></item><item><title>Como instalar o ArchLinux com LXDE (sem UEFFI)</title><link>https://brunorozendo.com/post/como-instalar-o-arch-linux-com-lxde.html</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/como-instalar-o-arch-linux-com-lxde.html</guid><description>&lt;table&gt;
+&lt;p&gt;Espere a página carregar, clique em &amp;ldquo;I have read and agree with the above terms and conditions&amp;rdquo; (aceitar) e faça o download.&lt;/p&gt;</description></item><item><title>Como instalar o ArchLinux com LXDE (sem UEFFI)</title><link>/post/como-instalar-o-arch-linux-com-lxde.html</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>/post/como-instalar-o-arch-linux-com-lxde.html</guid><description>&lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;Rv.&lt;/th&gt;
@@ -118,7 +118,7 @@
 a versão é &lt;strong&gt;Current Release: 2018.06.01&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Atenção:&lt;/strong&gt; a parte da instalação do Arch Linux é válida idependente da interface grafica a ser instalada.
 O que isso quer dizer é: Você pode fazer esse tutorial até a parte em que instala o Arch Linux, trocar de tutorial e instalar outra interface
-como &lt;a href="https://xfce.org/"&gt;XFCE&lt;/a&gt;, &lt;a href="https://mate-desktop.org/pt/"&gt;Mate&lt;/a&gt;, &lt;a href="https://launchpad.net/unity"&gt;Unity&lt;/a&gt; ou &lt;a href="https://www.gnome.org/"&gt;Gnome&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Instalando Gradle No Gnu/Linux</title><link>https://brunorozendo.com/post/instalando-gradle-no-gnu-linux.html</link><pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/instalando-gradle-no-gnu-linux.html</guid><description>&lt;p&gt;Gradle é uma poderosa ferramenta para o gerenciamento de build e dependências em java(e capaz de se extender para outras linguagens)&lt;/p&gt;
+como &lt;a href="https://xfce.org/"&gt;XFCE&lt;/a&gt;, &lt;a href="https://mate-desktop.org/pt/"&gt;Mate&lt;/a&gt;, &lt;a href="https://launchpad.net/unity"&gt;Unity&lt;/a&gt; ou &lt;a href="https://www.gnome.org/"&gt;Gnome&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Instalando Gradle No Gnu/Linux</title><link>/post/instalando-gradle-no-gnu-linux.html</link><pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate><guid>/post/instalando-gradle-no-gnu-linux.html</guid><description>&lt;p&gt;Gradle é uma poderosa ferramenta para o gerenciamento de build e dependências em java(e capaz de se extender para outras linguagens)&lt;/p&gt;
 &lt;h4 id="0-prerequisitos"&gt;0. Prerequisitos&lt;/h4&gt;
 &lt;p&gt;Ter o java 8 instalado&lt;/p&gt;
 &lt;h4 id="1-dowload-do-gradle"&gt;1. Dowload do gradle&lt;/h4&gt;
@@ -126,14 +126,14 @@ como &lt;a href="https://xfce.org/"&gt;XFCE&lt;/a&gt;, &lt;a href="https://mate-
 &lt;p&gt;Depois disso escolha uma pasta do no seu computador para descompactar, no meu caso será &lt;code&gt;/opt/gradle&lt;/code&gt;&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;bruno@ubuntu:~$ ls /opt/gradle/
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gradle-4.0.2-all.zip gradle-4.0.2 
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;bruno@ubuntu:~$&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Agora basta adicionar no &lt;code&gt;$PATH&lt;/code&gt; so sistema opercional.&lt;/p&gt;</description></item><item><title>Calcular π (pi)</title><link>https://brunorozendo.com/post/calcular-pi.html</link><pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/calcular-pi.html</guid><description>&lt;p&gt;Seja a fórmula matemática para calcular Pi (&lt;span class="MJXc-TeX-math-I"&gt;Π|π&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;Agora basta adicionar no &lt;code&gt;$PATH&lt;/code&gt; so sistema opercional.&lt;/p&gt;</description></item><item><title>Calcular π (pi)</title><link>/post/calcular-pi.html</link><pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate><guid>/post/calcular-pi.html</guid><description>&lt;p&gt;Seja a fórmula matemática para calcular Pi (&lt;span class="MJXc-TeX-math-I"&gt;Π|π&lt;/span&gt;)&lt;/p&gt;
 
 &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;
  &lt;mi&gt;&amp;pi;&lt;/mi&gt;
@@ -227,14 +227,14 @@ como &lt;a href="https://xfce.org/"&gt;XFCE&lt;/a&gt;, &lt;a href="https://mate-
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(String&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; args) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Pi();
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Criar Database Oracle 11g</title><link>https://brunorozendo.com/post/criar-database-oracle.html</link><pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/criar-database-oracle.html</guid><description>&lt;p&gt;Por curiosidade instalei um banco oracle numa maquina ubuntu e para minha surpresa criar uma database e bem mais complexo.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Criar Database Oracle 11g</title><link>/post/criar-database-oracle.html</link><pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate><guid>/post/criar-database-oracle.html</guid><description>&lt;p&gt;Por curiosidade instalei um banco oracle numa maquina ubuntu e para minha surpresa criar uma database e bem mais complexo.&lt;/p&gt;
 &lt;p&gt;Exemplo válidos em mysql e postgre, mas que não funciona no oracle.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;create&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;database&lt;/span&gt; teste;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Eis aqui a mágica, precisamos criar um &lt;code&gt;TABLESPACE&lt;/code&gt;, &lt;code&gt;DATAFILE&lt;/code&gt;, &lt;code&gt;USER&lt;/code&gt; e dar as permissões (&lt;code&gt;GRANT&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;O produto final:&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;bruno@ubuntu:~$: sqlplus / as sysdba
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -253,25 +253,26 @@ como &lt;a href="https://xfce.org/"&gt;XFCE&lt;/a&gt;, &lt;a href="https://mate-
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SQL&amp;gt; &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Feito! agora basta conecatar com sua ferramenta de preferência.&lt;/p&gt;</description></item><item><title>archlinux wifi</title><link>https://brunorozendo.com/post/archlinux-wifi.html</link><pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/archlinux-wifi.html</guid><description>&lt;p&gt;O método apresentado aqui server para Desktop Envirement tais como Unity, XFCE, LXDE,&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Feito! agora basta conecatar com sua ferramenta de preferência.&lt;/p&gt;</description></item><item><title>archlinux wifi</title><link>/post/archlinux-wifi.html</link><pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate><guid>/post/archlinux-wifi.html</guid><description>&lt;p&gt;O método apresentado aqui server para Desktop Envirement tais como Unity, XFCE, LXDE,&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Nós vamos usa o NetworkManager. Este que é usando em quase todas as distros linux.&lt;/p&gt;
 &lt;p&gt;Vamos tomar como ponto de partida o momento em que se instala o Arch Linux e que se tem uma conexão com a internet.&lt;/p&gt;
 &lt;p&gt;Caso esse não seja o seu caso digite no terminal :&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;root@archlinux ~# ping -c4 google.com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Caso a sua saida tenha sido algo parecido com:&lt;/p&gt;</description></item><item><title>Error could not open dev vmmon</title><link>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>https://brunorozendo.com/post/error-could-not-open-dev-vmmon.html</guid><description>&lt;p&gt;O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.&lt;/p&gt;
+&lt;p&gt;Caso a sua saida tenha sido algo parecido com:&lt;/p&gt;</description></item><item><title>Error could not open dev vmmon</title><link>/post/error-could-not-open-dev-vmmon.html</link><pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate><guid>/post/error-could-not-open-dev-vmmon.html</guid><description>&lt;p&gt;O problema aparece ao iniciar o VMware Workstation 10 ou VMWare Player.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Could not open /dev/vmmon: No such file or directory.
-Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p&gt;&lt;/blockquote&gt;
+Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Esse erro aparece em *unix mas para resolve-lo é fácil.&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo vmware-modconfig --console --install-all&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -279,7 +280,7 @@ Please make sure that the kernel module `vmmon&amp;rsquo; is loaded.&lt;/p&gt;&l
 &lt;p&gt;A saida deve ser algo parecido com:&lt;/p&gt;
 &lt;div class="terminal"&gt;
  &lt;div class="header"&gt;
- &lt;img src="https://brunorozendo.com//images/layouts/shortcodes/terminal.png" alt=""&gt;
+ &lt;img src="//images/layouts/shortcodes/terminal.png" alt=""&gt;
  &lt;div class="title"&gt;Terminal&lt;/div&gt;
  &lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Stopping VMware services:
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; VMware Authentication Daemon &lt;span style="color:#66d9ef"&gt;done&lt;/span&gt;
