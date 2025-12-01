@@ -1,4 +1,4 @@
-baseurl = "https://brunorozendo.com"
+baseurl = "/"
 title = "Bruno Rozendo"
 canonifyurls = true
 theme = "startbootstrap-clean-blog"
