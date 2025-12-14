@@ -8,8 +8,8 @@ copyright = "Code released under the Apache 2.0 license."
 uglyurls = true
 publishDir = "public"
 
-disqusShortname = "brunoozendo"
-googleAnalytics = "UA-86914466-1"
+#disqusShortname = "brunoozendo"
+#googleAnalytics = "UA-86914466-1"
 
 [author]
     name = "Bruno Rozendo"
